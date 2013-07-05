@@ -1,0 +1,148 @@
+m = peripheral.wrap("right")
+
+Atime = 1
+
+os.loadAPI("button")
+button.setMon("right")
+
+function Resetcable()
+	rs.setBundledOutput("back", colors.white)
+end
+
+Resetcable()
+
+function Resetmonitor()
+	sleep(5)
+	button.setState("Abutton", true)
+	button.setState("Bbutton", true)
+	button.setState("Cbutton", true)
+	button.setState("Dbutton", true)
+	button.setState("Ebutton", true)
+	rs.setBundledOutput("back", colors.white)
+	button.draw()
+end
+
+-- Redstone functions
+function redstone()
+	astate = button.getState("Abutton")
+	bstate = button.getState("Bbutton")
+	cstate = button.getState("Cbutton")
+	dstate = button.getState("Dbutton")
+	estate = button.getState("Ebutton")
+	if astate == false then
+		rs.setBundledOutput("back", colors.white + colors.orange)
+	end
+	if bstate == false then
+		rs.setBundledOutput("back", colors.white + colors.magenta)
+	end
+	if cstate == false then
+		rs.setBundledOutput("back", colors.white + colors.lightBlue)
+	end
+	if dstate == false then
+		rs.setBundledOutput("back", colors.white + colors.yellow)
+	end
+	if estate == false then
+		rs.setBundledOutput("back", colors.white + colors.lime)
+	end
+	Resetmonitor()
+end	
+
+
+-- The other button states (and colors)
+function Aknop()
+	astate = button.getState("Abutton")
+	if astate == false then
+		button.setState("Bbutton", true)
+		button.setState("Cbutton", true)
+		button.setState("Dbutton", true)
+		button.setState("Ebutton", true)
+	end
+	redstone()
+	button.draw()
+	print("Left A pressed")
+end
+	
+function Bknop()
+	bstate = button.getState("Bbutton")
+	if bstate == false then
+		button.setState("Abutton", true)
+		button.setState("Cbutton", true)
+		button.setState("Dbutton", true)
+		button.setState("Ebutton", true)
+	end
+	redstone()
+	button.draw()
+	print("Left B pressed")
+end
+
+function Cknop()
+	cstate = button.getState("Cbutton")
+	if cstate == false then
+		button.setState("Abutton", true)
+		button.setState("Bbutton", true)
+		button.setState("Dbutton", true)
+		button.setState("Ebutton", true)
+		
+	end
+	redstone()
+	button.draw()
+	print("Right A pressed")
+end
+
+function Dknop()
+	dstate = button.getState("Dbutton")
+	if dstate == false then
+		button.setState("Abutton", true)
+		button.setState("Bbutton", true)
+		button.setState("Cbutton", true)
+		button.setState("Ebutton", true)
+	end
+	redstone()
+	button.draw()
+	print("Right B pressed")
+end
+
+function Eknop()
+	estate = button.getState("Ebutton")
+	if estate == false then
+		button.setState("Abutton", true)
+		button.setState("Bbutton", true)
+		button.setState("Cbutton", true)
+		button.setState("Dbutton", true)
+	end
+	redstone()
+	button.draw()
+	print("AE portal pressed")
+end
+
+-- Making the button for the monitor + executing state function.
+function knoppen()
+	-- A Button
+	button.add("Abutton", "Left A", "toggle", 2, 2, 9, 4, colors.red, colors.lime, colors.white, Aknop)
+	button.setState("Abutton", true)
+	--button.flashtime(Atime)
+	
+	-- B button
+	button.add("Bbutton", "Left B", "toggle", 2, 6, 9, 8, colors.red, colors.lime, colors.white, Bknop)
+	button.setState("Bbutton", true)
+	
+	-- C button
+	button.add("Cbutton", "Right A", "toggle", 2, 10, 10, 12, colors.red, colors.lime, colors.white, Cknop)
+	button.setState("Cbutton", true)
+	
+	-- D button
+	button.add("Dbutton", "Right B", "toggle", 2, 14, 10, 16, colors.red, colors.lime, colors.white, Dknop)
+	button.setState("Dbutton", true)
+	
+	-- AE button
+	button.add("Ebutton", "AE Portal", "toggle", 13, 2, 23, 4, colors.red, colors.lime, colors.white, Eknop)
+	button.setState("Ebutton", true)
+
+	button.draw()
+end
+
+knoppen()
+
+while true do
+	button.check()
+end
