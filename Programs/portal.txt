@@ -1,14 +1,11 @@
--- Update Information
-prgrVersion = "0.5"
+-- Version Information
+prgrVersion = 0.5
 m = peripheral.wrap("right")
 Atime = 1
 
- function version()
-  return prgrVersion
-end
-
 function downloadAPI()
 	print("Updating...")
+	sleep(1)
  
 	request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
 	data = request.readAll()
@@ -25,6 +22,7 @@ function downloadAPI()
 	end
  
 	print("Update complete.")
+	sleep(1)
 	term.clear()
 	term.setCursorPos(1,1)
 	print("Portal program started.")
@@ -32,14 +30,15 @@ end
 
 function checkAPI()
 	print("Checking for API")
+	sleep(1)
 	if fs.exists("button") then
 		os.unloadAPI("button")
 		os.loadAPI("button")
  
 		clientVersion = button.version()
  
-		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
-		serverVersion = versionRequest.readLine(3)
+		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/Buttonversion.txt")
+		serverVersion = versionRequest.readAll()
  
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
@@ -56,7 +55,7 @@ function checkAPI()
 			else
 				print("Update canceled.")
 				print("Try again.")
-				sleep(1)
+				sleep(2)
 				checkAPI()
 			end
 		end
