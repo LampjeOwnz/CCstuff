@@ -8,23 +8,25 @@ Atime = 1
 end
 
 function downloadAPI()
-  print("Updating...")
+	print("Updating...")
  
-  request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
-  data = request.readAll()
+	request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
+	data = request.readAll()
  
-  if fs.exists("button") then
-    fs.delete("button")
-    file = fs.open("button", "w")
-    file.write(data)
-    file.close()
-  else
-    file = fs.open("button", "w")
-    file.write(data)
-    file.close()
-  end
+	if fs.exists("button") then
+		fs.delete("button")
+		file = fs.open("button", "w")
+		file.write(data)
+		file.close()
+	else
+		file = fs.open("button", "w")
+		file.write(data)
+		file.close()
+	end
  
-  print("Update complete.")
+	print("Update complete.")
+	term.clear()
+	print("Portal program started.")
 end
 
 function checkAPI()
@@ -40,6 +42,8 @@ function checkAPI()
  
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
+			term.clear()
+			print("Portal program started.")
 		else
 			print("Version "..serverVersion.." is now available. Would you like to update?")
    
@@ -50,7 +54,8 @@ function checkAPI()
 			else
 				print("Update canceled.")
 				print("Try again.")
-				downloadAPI()
+				sleep(1)
+				checkAPI()
 			end
 		end
 	else
