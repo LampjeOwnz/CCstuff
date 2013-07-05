@@ -119,9 +119,9 @@ function knoppen()
 	-- A Button
 	button.add("Abutton", "Left A", "toggle", 2, 2, 9, 4, colors.red, colors.lime, colors.white, 
 	function ()
+		print("Left A pressed")
 		redstone()
 		button.draw()
-		print("Left A pressed")
 	end)
 	button.setState("Abutton", true)
 	--button.flashtime(Atime)
@@ -129,36 +129,36 @@ function knoppen()
 	-- B button
 	button.add("Bbutton", "Left B", "toggle", 2, 6, 9, 8, colors.red, colors.lime, colors.white, 
 	function ()
+		print("Left B pressed")
 		redstone()
 		button.draw()
-		print("Left B pressed")
 	end)
 	button.setState("Bbutton", true)
 	
 	-- C button
 	button.add("Cbutton", "Right A", "toggle", 2, 10, 10, 12, colors.red, colors.lime, colors.white, 
 	function ()
+		print("Right A pressed")
 		redstone()
 		button.draw()
-		print("Right A pressed")
 	end)
 	button.setState("Cbutton", true)
 	
 	-- D button
 	button.add("Dbutton", "Right B", "toggle", 2, 14, 10, 16, colors.red, colors.lime, colors.white, 
 	function ()
+		print("Right B pressed")
 		redstone()
 		button.draw()
-		print("Right B pressed")
 	end)
 	button.setState("Dbutton", true)
 	
 	-- AE button
 	button.add("Ebutton", "AE Portal", "toggle", 13, 2, 23, 4, colors.red, colors.lime, colors.white, 
 	function ()
+		print("AE portal pressed")
 		redstone()
 		button.draw()
-		print("AE portal pressed")
 	end)
 	button.setState("Ebutton", true)
 
