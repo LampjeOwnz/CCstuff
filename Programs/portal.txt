@@ -42,11 +42,13 @@ function checkAPI()
  
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
+			sleep(2)
 			term.clear()
 			term.setCursorPos(1,1)
 			print("Portal program started.")
 		else
-			print("Version "..serverVersion.." is now available. Would you like to update?")
+			print("Current version: "..clientVersion..".")
+			print("Version: "..serverVersion.." is now available. Would you like to update?")
    
 			input = read()
    
