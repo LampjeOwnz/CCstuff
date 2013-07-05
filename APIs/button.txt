@@ -1,5 +1,5 @@
 -- Update Information
-apiVersion = "1.0"
+apiVersion = 1.0
 
 -- Defualt flash timer
 timer = 0.2
