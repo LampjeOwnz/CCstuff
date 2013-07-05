@@ -26,6 +26,7 @@ function downloadAPI()
  
 	print("Update complete.")
 	term.clear()
+	term.setCursorPos(1,1)
 	print("Portal program started.")
 end
 
@@ -38,11 +39,12 @@ function checkAPI()
 		clientVersion = button.version()
  
 		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
-		serverVersion = versionRequest.readAll()
+		serverVersion = versionRequest.readLine(2)
  
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
 			term.clear()
+			term.setCursorPos(1,1)
 			print("Portal program started.")
 		else
 			print("Version "..serverVersion.." is now available. Would you like to update?")
