@@ -1,14 +1,64 @@
 -- Update Information
-prgrVersion = "0.1"
+prgrVersion = "0.5"
+m = peripheral.wrap("right")
+Atime = 1
 
  function version()
   return prgrVersion
 end
 
+function downloadAPI()
+  print("Updating...")
+ 
+  request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
+  data = request.readAll()
+ 
+  if fs.exists("button") then
+    fs.delete("button")
+    file = fs.open("button", "w")
+    file.write(data)
+    file.close()
+  else
+    file = fs.open("button", "w")
+    file.write(data)
+    file.close()
+  end
+ 
+  print("Update complete.")
+end
 
-m = peripheral.wrap("right")
+function checkAPI()
+	print("Checking for API")
+	if fs.exists("button") then
+		os.unloadAPI("button")
+		os.loadAPI("button")
+ 
+		clientVersion = button.version()
+ 
+		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
+		serverVersion = versionRequest.readAll()
+ 
+		if serverVersion == clientVersion then
+			print("You have the newest version of the API.")
+		else
+			print("Version "..serverVersion.." is now available. Would you like to update?")
+   
+			input = read()
+   
+			if string.lower(input) == "yes" then
+				downloadAPI()
+			else
+				print("Update canceled.")
+				print("Try again.")
+				downloadAPI()
+			end
+		end
+	else
+		downloadAPI()
+	end
+end
 
-Atime = 1
+checkAPI()
 
 os.loadAPI("button")
 button.setMon("right")
