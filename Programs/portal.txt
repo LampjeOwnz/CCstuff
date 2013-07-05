@@ -1,3 +1,11 @@
+-- Update Information
+prgrVersion = "0.1"
+
+ function version()
+  return prgrVersion
+end
+
+
 m = peripheral.wrap("right")
 
 Atime = 1
