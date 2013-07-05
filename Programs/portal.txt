@@ -1,5 +1,5 @@
 -- Version Information
-prgrVersion = "0.5"
+prgrVersion = "0.6"
 m = peripheral.wrap("right")
 Atime = 1
 
