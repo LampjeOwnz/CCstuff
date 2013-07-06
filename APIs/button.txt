@@ -1,4 +1,5 @@
--- Update Information
+-- Version Information
+-- Button
 apiVersion = "1.0"
 
 -- Defualt flash timer

@@ -1,6 +1,6 @@
 -- Version Information
--- Portal
-prgrVersion = "0.7"
+-- Spawner
+prgrVersion = "0.5"
 m = peripheral.wrap("top")
 
 function downloadAPI()
@@ -45,7 +45,7 @@ function checkAPI()
 			sleep(1)
 			term.clear()
 			term.setCursorPos(1,1)
-			print("Portal program started.")
+			print("Spawner program started.")
 		else
 			print("Current version: "..clientVersion..".")
 			print("Version: "..serverVersion.." is now available. \nWould you like to update?")
@@ -73,90 +73,76 @@ os.loadAPI("button")
 button.setMon("top")
 
 function Resetcable()
-	rs.setBundledOutput("back", colors.white)
+	rs.setBundledOutput("bottom", 0)
 end
 
 Resetcable()
 
-function Resetmonitor()
-	sleep(5)
-	button.setState("Abutton", true)
-	button.setState("Bbutton", true)
-	button.setState("Cbutton", true)
-	button.setState("Dbutton", true)
-	button.setState("Ebutton", true)
-	rs.setBundledOutput("back", colors.white)
-	button.draw()
-end
-
 -- Redstone functions
-function redstone()
-	astate = button.getState("Abutton")
-	bstate = button.getState("Bbutton")
-	cstate = button.getState("Cbutton")
-	dstate = button.getState("Dbutton")
-	estate = button.getState("Ebutton")
-	if astate == false then
-		rs.setBundledOutput("back", colors.white + colors.orange)
-	end
-	if bstate == false then
-		rs.setBundledOutput("back", colors.white + colors.magenta)
-	end
-	if cstate == false then
-		rs.setBundledOutput("back", colors.white + colors.lightBlue)
-	end
-	if dstate == false then
-		rs.setBundledOutput("back", colors.white + colors.yellow)
-	end
-	if estate == false then
-		rs.setBundledOutput("back", colors.white + colors.lime)
-	end
-	Resetmonitor()
+function redstone(cabstate, cabcolor)
+	if (cabstate == false) then
+		out = rs.getBundledOutput("bottom")
+		rs.setBundledOutput("bottom", (out + cabcolor))
+	elseif (cabstate == true) then
+		out = rs.getBundledOutput("bottom")
+		rs.setBundledOutput("bottom", (out - cabcolor))
+   end
 end	
 
 -- Making the button for the monitor + executing state function.
 function knoppen()
 	-- A Button
-	button.add("Abutton", "Left A", "toggle", 2, 2, 9, 4, colors.red, colors.lime, colors.white, 
+	--		Button name,  The label,  Mode,   x1 y1 x2 y2, First col, sec color,   text color,   Function to do.
+	button.add("Abutton", "White", "toggle", 2, 2, 8, 4, colors.red, colors.white, colors.black, 
 	function ()
-		print("Left A touched")
-		redstone()
+		print("White touched")
+		astate = button.getState("Abutton")
+		local color = colors.white
+		redstone(astate, color)
 		button.draw()
 	end)
 	button.setState("Abutton", true)
+	--button.flashtime(Atime)
 	
 	-- B button
-	button.add("Bbutton", "Left B", "toggle", 2, 6, 9, 8, colors.red, colors.lime, colors.white, 
+	button.add("Bbutton", "Orange", "toggle", 2, 6, 9, 8, colors.red, colors.orange, colors.black, 
 	function ()
-		print("Left B touched")
-		redstone()
+		print("Orange touched")
+		bstate = button.getState("Bbutton")
+		local color = colors.orange
+		redstone(bstate, color)
 		button.draw()
 	end)
 	button.setState("Bbutton", true)
-	
 	-- C button
-	button.add("Cbutton", "Right A", "toggle", 2, 10, 10, 12, colors.red, colors.lime, colors.white, 
+	button.add("Cbutton", "Magenta", "toggle", 2, 10, 10, 12, colors.red, colors.magenta, colors.black, 
 	function ()
-		print("Right A touched")
-		redstone()
+		print("Magenta touched")
+		cstate = button.getState("Cbutton")
+		local color = colors.magenta
+		redstone(cstate, color)
 		button.draw()
 	end)
 	button.setState("Cbutton", true)
 	
 	-- D button
-	button.add("Dbutton", "Right B", "toggle", 2, 14, 10, 16, colors.red, colors.lime, colors.white, 
+	button.add("Dbutton", "Light blue", "toggle", 2, 14, 13, 16, colors.red, colors.lightBlue, colors.black, 
 	function ()
-		print("Right B touched")
-		redstone()
+		print("Light blue touched")
+		dstate = button.getState("Dbutton")
+		local color = colors.lightBlue
+		redstone(dstate, color)
 		button.draw()
 	end)
 	button.setState("Dbutton", true)
 	
 	-- AE button
-	button.add("Ebutton", "AE Portal", "toggle", 13, 2, 23, 4, colors.red, colors.lime, colors.white, 
+	button.add("Ebutton", "Yellow", "toggle", 13, 2, 20, 4, colors.red, colors.yellow, colors.black, 
 	function ()
-		print("AE portal touched")
-		redstone()
+		print("Yellow touched")
+		estate = button.getState("Ebutton")
+		local color = colors.yellow
+		redstone(estate, color)
 		button.draw()
 	end)
 	button.setState("Ebutton", true)
