@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.2"
+apiVersion = "0.3"
 
 function version()
   return apiVersion
@@ -70,7 +70,7 @@ function move(direction, farmMode)
 		turtfull()
 	end
 	if string.lower(direction) == "down" then
-		if turtle.drtrctDown() then
+		if turtle.detectDown() then
 			turtle.digDown()
 			sleep(1)
 		end
