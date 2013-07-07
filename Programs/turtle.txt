@@ -1,0 +1,73 @@
+-- Version Information
+-- Turtle Program
+prgrVersion = "0.1"
+
+function downloadAPI()
+	print("Updating...")
+	sleep(1)
+ 
+	request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/turt.txt")
+	data = request.readAll()
+ 
+	if fs.exists("turt") then
+		fs.delete("turt")
+		file = fs.open("turt", "w")
+		file.write(data)
+		file.close()
+	else
+		file = fs.open("turt", "w")
+		file.write(data)
+		file.close()
+	end
+ 
+	print("Update complete.")
+	sleep(1)
+	term.clear()
+	term.setCursorPos(1,1)
+	print("Turtle program started.")
+end
+
+function checkAPI()
+	print("Checking for API")
+	sleep(1)
+	if fs.exists("turt") then
+		os.unloadAPI("turt")
+		os.loadAPI("turt")
+ 
+		clientVersion = turt.version()
+ 
+		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/APIversions.txt")
+		serverVersion = versionRequest.readAll()
+ 
+		if serverVersion == clientVersion then
+			print("You have the newest version of the API.")
+			sleep(2)
+			term.clear()
+			term.setCursorPos(1,1)
+			print("Turtle program started.")
+		else
+			print("Current version: "..clientVersion..".")
+			print("Version: "..serverVersion.." is now available. \nWould you like to update?")
+			print("Type in: Yes To Update the turt API.")
+   
+			input = read()
+   
+			if string.lower(input) == "yes" then
+				downloadAPI()
+			else
+				print("Update canceled.")
+				print("Try again.")
+				sleep(2)
+				checkAPI()
+			end
+		end
+	else
+		downloadAPI()
+	end
+end
+
+checkAPI()
+
+os.loadAPI("turt")
+
+turt.move(pilar, false)
