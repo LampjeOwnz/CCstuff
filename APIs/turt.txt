@@ -105,8 +105,7 @@ function move(direction, farmMode)
 	-- Removing 1 by 2 deep wall
 	if string.lower(direction) == "wall" then
 		steps = 1
-		check = turtle.detect()
-		while check == false do
+		while not turtle.detect() do
 			move("forward", false)
 		end
 		while turtle.detectUp() do
