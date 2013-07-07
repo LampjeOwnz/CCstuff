@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.4"
+apiVersion = "0.3"
 
 function version()
   return apiVersion
@@ -34,9 +34,9 @@ end
 
 -- Needs a chest below it.
 function refuel()
-	print("refueling"..seltur..".")
+	print("refueling "..seltur..".")
 	fuel = turtle.select(seltur)
-	items = turtle.getItemcount(16)
+	--items = turtle.getItemcount(16)
 	if fuel == 263 then
 		turtle.refuel()
 	else
@@ -58,7 +58,6 @@ end
 function move(direction, farmMode)
 	fuellvl = turtle.getFuelLevel()
 	if fuellvl < 100 then
-		print("fuellvl")
 		refuel()
 	end
 	
