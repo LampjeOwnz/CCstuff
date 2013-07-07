@@ -143,11 +143,11 @@ function area(length, width, hight)
 				move("forward")
 			end
 			if bump then
-				move("left")
-			else
 				move("right")
+			else
+				move("left")
 			end
-			bump = not bumb
+			bump = not bump
 		end
 	end
 	-- return
