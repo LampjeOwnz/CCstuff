@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.175"
+apiVersion = "0.176"
 
 function version()
   return apiVersion
@@ -129,13 +129,6 @@ function move(direction)
 	end
 end
 
-function areaDown()
-	while turth > 1 do
-		move("down")
-		turth = turth -1
-	end
-end
-
 function area(length, width, hight)
 	if turth < 2 then
 		print("Clearing area Length: "..length.." Width: "..width.." Hight: "..hight..".")
@@ -193,7 +186,10 @@ function area(length, width, hight)
 		turth = turth +1
 		area(length, width, hight)
 	elseif turth > hight then	
-		areaDown()
+		while turth > 2 do
+			move("down")
+			turth = turth -1
+		end
 		turth = 1
 	end
 	print("Area cleared Length: "..length.." Width: "..width.." Hight: "..hight..".")
