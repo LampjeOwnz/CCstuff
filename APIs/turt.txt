@@ -191,7 +191,7 @@ function area(length, width, hight)
 			turth = turth -1
 		end
 	end
-	turth = 1
+	-- turth = 1
 	if turth == 1 then
 		print("Area cleared Length: "..length.." Width: "..width.." Hight: "..hight..".")
 	end
