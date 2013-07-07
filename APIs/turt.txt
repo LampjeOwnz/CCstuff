@@ -1,71 +1,66 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.2"
+apiVersion = "0.3"
 
 function version()
   return apiVersion
 end
 
--- Turtle item (full) detection, when farmMode is true
+local seltur = 1
+
+-- Turtle item (full) detection, when farmMode is true.
 function turtfull()
-	a = turtle.getItemcount(1)
-	b = turtle.getItemcount(2)
-	c = turtle.getItemcount(3)
-	d = turtle.getItemcount(4)
-	e = turtle.getItemcount(5)
-	f = turtle.getItemcount(6)
-	g = turtle.getItemcount(7)
-	h = turtle.getItemcount(8)
-	i = turtle.getItemcount(9)
-	j = turtle.getItemcount(10)
-	k = turtle.getItemcount(11)
-	l = turtle.getItemcount(12)
-	m = turtle.getItemcount(13)
-	n = turtle.getItemcount(14)
-	o = turtle.getItemcount(15)
-	p = turtle.getItemcount(16)
+	a = turtle.getItemcount(1) b = turtle.getItemcount(2) c = turtle.getItemcount(3) d = turtle.getItemcount(4)
+	e = turtle.getItemcount(5) f = turtle.getItemcount(6) g = turtle.getItemcount(7) h = turtle.getItemcount(8)
+	i = turtle.getItemcount(9) j = turtle.getItemcount(10) k = turtle.getItemcount(11) l = turtle.getItemcount(12)
+	m = turtle.getItemcount(13) n = turtle.getItemcount(14) o = turtle.getItemcount(15)
 	if a and b and c and d and e and f and g and h and i and j and k and l and m and n and o and p == 64 then
-		turtle.select(1) turtle.drop()
-		turtle.select(2) turtle.drop()
-		turtle.select(3) turtle.drop()
-		turtle.select(4) turtle.drop()
-		turtle.select(5) turtle.drop()
-		turtle.select(6) turtle.drop()
-		turtle.select(7) turtle.drop()
-		turtle.select(8) turtle.drop()
-		turtle.select(9) turtle.drop()
-		turtle.select(10) turtle.drop()
-		turtle.select(11) turtle.drop()
-		turtle.select(12) turtle.drop()
-		turtle.select(13) turtle.drop()
-		turtle.select(14) turtle.drop()
-		turtle.select(15) turtle.drop()
-		turtle.select(15) turtle.drop()
+		turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
+		turtle.select(5) turtle.drop() turtle.select(6) turtle.drop() turtle.select(7) turtle.drop() turtle.select(8) turtle.drop()
+		turtle.select(9) turtle.drop() turtle.select(10) turtle.drop() turtle.select(11) turtle.drop() turtle.select(12) turtle.drop()
+		turtle.select(13) turtle.drop() turtle.select(14) turtle.drop() turtle.select(15) turtle.drop()
 	end
+	turtle.select(1)
 end
 
--- Turtle drop all function.
+-- Turtle drop all but fuel slot function.
 function dropall()
-	turtle.select(1) turtle.drop()
-	turtle.select(2) turtle.drop()
-	turtle.select(3) turtle.drop()
-	turtle.select(4) turtle.drop()
-	turtle.select(5) turtle.drop()
-	turtle.select(6) turtle.drop()
-	turtle.select(7) turtle.drop()
-	turtle.select(8) turtle.drop()
-	turtle.select(9) turtle.drop()
-	turtle.select(10) turtle.drop()
-	turtle.select(11) turtle.drop()
-	turtle.select(12) turtle.drop()
-	turtle.select(13) turtle.drop()
-	turtle.select(14) turtle.drop()
-	turtle.select(15) turtle.drop()
-	turtle.select(15) turtle.drop()
+	turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
+	turtle.select(5) turtle.drop() turtle.select(6) turtle.drop() turtle.select(7) turtle.drop() turtle.select(8) turtle.drop()
+	turtle.select(9) turtle.drop() turtle.select(10) turtle.drop() turtle.select(11) turtle.drop() turtle.select(12) turtle.drop()
+	turtle.select(13) turtle.drop() turtle.select(14) turtle.drop() turtle.select(15) turtle.drop()
+	turtle.select(1)
 end
+
+-- Needs a chest below it.
+function refuel()
+	print("refueling")
+	fuel = turtle.select(seltur)
+	if fuel == 263 then
+		turtle.refuel()
+	else
+		if seltur < 16 then
+			seltur = seltur + 1
+		end
+		if seltur == 16 and not fuel == 268 then
+			turtle.drop()
+			print("Looking for a chest with coal")
+			turtle.suckDown()
+			turtle.select(1)
+			seltur = 1
+		end
+		refuel()
+	end
+end
+		
 
 -- Turtle movements and farmMode.
 function move(direction, farmMode)
+	fuellvl = turtle.getFuelLevel()
+	if fuellvl < 100 then
+		refuel()
+	end
+	
 	if farmMode == true then
 		turtfull()
 	end
