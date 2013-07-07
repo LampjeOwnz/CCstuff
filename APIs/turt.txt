@@ -58,6 +58,7 @@ end
 function move(direction, farmMode)
 	fuellvl = turtle.getFuelLevel()
 	if fuellvl < 100 then
+		print("fuellvl")
 		refuel()
 	end
 	
