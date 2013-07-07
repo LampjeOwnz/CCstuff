@@ -55,6 +55,7 @@ function checkAPI()
 		file.readLine()
 		line = file.readLine()
 		serverVersion = line
+		file.close()
 		
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
