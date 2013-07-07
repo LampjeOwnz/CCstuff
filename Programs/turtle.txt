@@ -37,7 +37,11 @@ function checkAPI()
 		clientVersion = turt.version()
  
 		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/APIversions.txt")
-		serverVersion = versionRequest.readAll()
+		versionRequest.readLine()
+		versionRequest.readLine()
+		versionRequest.readLine()
+		line = versionRequest.readLine()
+		serverVersion = line
  
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
