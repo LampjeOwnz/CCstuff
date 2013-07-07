@@ -1,10 +1,12 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.170"
+apiVersion = "0.171"
 
 function version()
   return apiVersion
 end
+
+local turth = 1
 
 -- Turtle item (full) detection, when farmMode is true. not fuel slot(16).
 function turtfull()
@@ -127,50 +129,64 @@ function move(direction)
 end
 
 function area(length, width, hight)
-	bump = false
-	for w=1, width do
-		for l=1, length do
-			if l~=length then
-				move("forward")
+	print("Clearing area Lenght: "..lenght.." Width: "..width.." Hight: "..hight..".")
+	if turth <= hight then
+		bump = false
+		for w=1, width do
+			for l=1, length do
+				if l~=length then
+					move("forward")
+				end
+			end
+			if w~=width then
+				if not bump then
+					move("left")
+					move("forward")
+				else
+					move("right")
+					move("forward")
+				end
+				if bump then
+					move("right")
+				else
+					move("left")
+				end
+				bump = not bump
 			end
 		end
-		if w~=width then
-			if not bump then
-				move("left")
-				move("forward")
-			else
-				move("right")
-				move("forward")
-			end
-			if bump then
-				move("right")
-			else
-				move("left")
-			end
-			bump = not bump
-		end
-	end
-	-- return
-	if not bump then
-		move("left")
-		move("forward")
-		move("left")
-		for i=1, length do
-			if i~=length then
-				move("forward")
-			end
-		end
-	end
-	move("left")
-	if width == 1 then
-		move("forward")
-	else
-		for i=1, width - 1 do
-			move("forward")
-		end
+		-- return
 		if not bump then
+			move("left")
 			move("forward")
+			move("left")
+			for i=1, length do
+				if i~=length then
+					move("forward")
+				end
+			end
 		end
+		move("left")
+		if width == 1 then
+			move("forward")
+		else
+			for i=1, width - 1 do
+				move("forward")
+			end
+			if not bump then
+				move("forward")
+			end
+		end
+		move("left")
+		move("up")
+		turth = turth +1
+		area(length, width, hight)
+	elseif h > hight then
+		for h=1, higth do
+			if h~= hight then
+				move("down")
+			end
+		end	
+		turth = 1
 	end
-	move("left")	
+	print("Area cleared Lenght: "..lenght.." Width: "..width.." Hight: "..hight..".")
 end
