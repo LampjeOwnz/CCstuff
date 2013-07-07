@@ -50,17 +50,20 @@ function refuel()
 	end
 	print("Refueling done")
 	sleep(1)
-	term.clear()
-	term.setCursorPos(1, 1)
-	print("Resuming last command")
-	sleep(1)
 end
 
 function fuellvl()
+	print("Check fuel lvl")
 	fuellvl = turtle.getFuelLevel()
 	if fuellvl < 100 then
 		refuel()
 	end
+	print("Fuel lvl: "..fuellvl.."")
+	sleep(1)
+	term.clear()
+	term.setCursorPos(1, 1)
+	print("Resuming last command")
+	sleep(1)
 end
 		
 
