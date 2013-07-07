@@ -129,8 +129,8 @@ end
 function area(length, width, hight)
 	bump = false
 	for w=1, width do
-		for l=1, lenght do
-			if l~=legnth then
+		for l=1, length do
+			if l~=length then
 				move("forward")
 			end
 		end
