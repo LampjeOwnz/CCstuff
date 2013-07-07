@@ -74,4 +74,4 @@ checkAPI()
 
 os.loadAPI("turt")
 
-turt.move("wall", false)
+turt.move("foward", false)
