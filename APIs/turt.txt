@@ -1,12 +1,13 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.174"
+apiVersion = "0.175"
 
 function version()
   return apiVersion
 end
 
 local turth = 1
+local turthb = 1
 
 -- Turtle item (full) detection, when farmMode is true. not fuel slot(16).
 function turtfull()
@@ -128,6 +129,13 @@ function move(direction)
 	end
 end
 
+function areaDown()
+	while turth > 1 do
+		move("down")
+		turth = turth -1
+	end
+end
+
 function area(length, width, hight)
 	if turth < 2 then
 		print("Clearing area Length: "..length.." Width: "..width.." Hight: "..hight..".")
@@ -184,12 +192,9 @@ function area(length, width, hight)
 		end
 		turth = turth +1
 		area(length, width, hight)
-	elseif turth > hight then
-		if turth > 1 then
-			move("down")
-			area(length, width, hight)
-			turth = turth -1
-		end
+	elseif turth > hight then	
+		areaDown()
+		turth = 1
 	end
 	print("Area cleared Length: "..length.." Width: "..width.." Hight: "..hight..".")
 end
