@@ -133,7 +133,7 @@ function area(length, width, hight)
 	if turth < 2 then
 		print("Clearing area Length: "..length.." Width: "..width.." Hight: "..hight..".")
 	end
-	if turth <= hight then
+	while turth <= hight do
 		bump = false
 		for w=1, width do
 			for l=1, length do
@@ -184,18 +184,16 @@ function area(length, width, hight)
 			move("up")
 		end
 		turth = turth +1
-		area(length, width, hight)
-	elseif turth > hight then	
+		-- area(length, width, hight)
+	end
+	if turth > hight then	
 		while turth > 2 do
 			move("down")
 			turth = turth -1
 		end
-	end
-	if turth == 2 then
 		turth = 1
 	end
-	-- turth = 1
-	if turth == 1 then
+	if turth < 2 then
 		print("Area cleared.")
 	end
 end
