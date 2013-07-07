@@ -190,8 +190,8 @@ function area(length, width, hight)
 			move("down")
 			turth = turth -1
 		end
-		turth = 1
 	end
+	turth = 1
 	if turth < 2 then
 		print("Area cleared Length: "..length.." Width: "..width.." Hight: "..hight..".")
 	end
