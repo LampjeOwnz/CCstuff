@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.2"
+apiVersion = "0.3"
 
 function version()
   return apiVersion
