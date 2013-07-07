@@ -179,7 +179,7 @@ function area(length, width, hight)
 			end
 		end
 		move("left")
-		if turth < 4 then
+		if turth < hight then
 			move("up")
 		end
 		turth = turth +1
