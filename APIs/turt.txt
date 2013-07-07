@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.3"
+apiVersion = "0.2"
 
 function version()
   return apiVersion
@@ -34,24 +34,14 @@ end
 
 -- Needs a chest below it.
 function refuel()
-	print("refueling "..seltur..".")
-	fuel = turtle.select(seltur)
 	items = turtle.getItemCount(16)
-	if fuel == 263 then
-		turtle.refuel()
-	else
-		if seltur <= 16 then
-			seltur = seltur + 1
-		end
-		fuel = turtle.select(seltur)
-		if seltur == 16 and items == 0 then
-			print("Looking for a chest with coal")
-			turtle.suckDown()
-			turtle.select(1)
-			seltur = 1
-		end
-		refuel()
+	turtle.select(16)
+	if items == 0 then
+		turtle.suckDown()
+		turtle.select(1)
 	end
+	print("refueling.")
+	sleep(1)
 end
 		
 
