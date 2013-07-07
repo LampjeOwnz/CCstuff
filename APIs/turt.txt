@@ -6,9 +6,9 @@ function version()
   return apiVersion
 end
 
--- Turtle item (full) detection, when farmMode is true.
+-- Turtle item (full) detection, when farmMode is true. not fuel slot(16).
 function turtfull()
-	print("Checking if turtle is full and drop all items.")
+	print("Checking if turtle is full and drop all items. not fuel slot(16).")
 	a = turtle.getItemcount(1) b = turtle.getItemcount(2) c = turtle.getItemcount(3) d = turtle.getItemcount(4)
 	e = turtle.getItemcount(5) f = turtle.getItemcount(6) g = turtle.getItemcount(7) h = turtle.getItemcount(8)
 	i = turtle.getItemcount(9) j = turtle.getItemcount(10) k = turtle.getItemcount(11) l = turtle.getItemcount(12)
@@ -23,9 +23,9 @@ function turtfull()
 	sleep(1)
 end
 
--- Turtle drop all but fuel slot function.
+-- Turtle drop all but fuel slot function. not fuel slot(16).
 function dropall()
-	print("Drop all items.")
+	print("Drop all items. nt fuel slot(16).")
 	turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
 	turtle.select(5) turtle.drop() turtle.select(6) turtle.drop() turtle.select(7) turtle.drop() turtle.select(8) turtle.drop()
 	turtle.select(9) turtle.drop() turtle.select(10) turtle.drop() turtle.select(11) turtle.drop() turtle.select(12) turtle.drop()
@@ -48,6 +48,11 @@ function refuel()
 		turtle.refuel()
 		turtle.select(1)
 	end
+	print("Refueling done")
+	sleep(1)
+	term.clear()
+	term.setCursorPos(1, 1)
+	print("Resuming last program")
 	sleep(1)
 end
 		
@@ -94,6 +99,7 @@ function move(direction)
 	
 	-- Removing 1 by 1 pilar
 	if string.lower(direction) == "pilar" then
+		print("Removing pilar")
 		steps = 1
 		move("forward")
 		while turtle.detectUp() do
@@ -104,5 +110,7 @@ function move(direction)
 			move("down")
 			steps = steps - 1
 		end
+		print("Pilar removed")
+		sleep(1)
 	end
 end
