@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.25"
+apiVersion = "0.26"
 
 function version()
   return apiVersion
@@ -59,11 +59,11 @@ function fuellvl()
 		refuel()
 	end
 	print("Fuel lvl: "..fuellvl.."")
-	sleep(1)
+	sleep(1.2)
 	term.clear()
 	term.setCursorPos(1, 1)
 	print("Resuming last command")
-	sleep(1)
+	sleep(1.2)
 end
 		
 
