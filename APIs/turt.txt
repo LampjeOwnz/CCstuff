@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.1"
+apiVersion = "0.2"
 
 function version()
   return apiVersion
@@ -111,13 +111,14 @@ function move(direction, farmMode)
 	-- Removing 1 by 1 pilar
 	if string.lower(direction) == "pilar" then
 		steps = 1
-		move("forward")
+		move("forward", false)
+		move("forward", false)
 		while turtle.detectUp() do
-			move("up")
+			move("up", false)
 			steps = steps + 1
 		end
 		while steps > 1 do
-			move("down")
+			move("down", false)
 			steps = steps - 1
 		end
 	end
