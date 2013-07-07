@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.2"
+apiVersion = "0.3"
 
 function version()
   return apiVersion
@@ -38,6 +38,7 @@ function refuel()
 	turtle.select(16)
 	if items == 0 then
 		turtle.suckDown()
+		turtle.refuel()
 		turtle.select(1)
 	end
 	print("refueling.")
