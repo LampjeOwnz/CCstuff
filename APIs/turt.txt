@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.3"
+apiVersion = "0.2"
 
 function version()
   return apiVersion
@@ -33,7 +33,7 @@ function dropall()
 end
 
 -- Needs a chest below it.
-function refuel()
+function refuel(direction, farmMode)
 	items = turtle.getItemCount(16)
 	turtle.select(16)
 	if items == 0 then
@@ -43,6 +43,7 @@ function refuel()
 	end
 	print("refueling.")
 	sleep(1)
+	move(direction, farmMode)
 end
 		
 
@@ -50,7 +51,7 @@ end
 function move(direction, farmMode)
 	fuellvl = turtle.getFuelLevel()
 	if fuellvl < 100 then
-		refuel()
+		refuel(direction, farmMode)
 	end
 	
 	if farmMode == true then
