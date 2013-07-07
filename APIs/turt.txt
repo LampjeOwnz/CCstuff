@@ -52,6 +52,7 @@ function refuel()
 	sleep(1)
 end
 
+-- Will return the fuel lvl to indicate if it has to refuel
 function fuellvl()
 	print("Check fuel lvl")
 	fuellvl = turtle.getFuelLevel()
@@ -67,7 +68,7 @@ function fuellvl()
 end
 		
 
--- Turtle movements and farmMode.
+-- Turtle movements.
 function move(direction)
 	if string.lower(direction) == "down" then
 		if turtle.detectDown() then
@@ -113,7 +114,7 @@ function move(direction)
 		steps = 1
 		move("forward")
 		while turtle.detectUp() do
-			move("up", false)
+			move("up")
 			steps = steps + 1
 		end
 		while steps > 1 do
@@ -123,4 +124,56 @@ function move(direction)
 		print("Pilar removed")
 		sleep(1)
 	end
+end
+
+function area(length, width, hight)
+	bump = false
+	for w=1, width do
+		for l=1, lenght do
+			if l~=legnth then
+				move("forward")
+			end
+		end
+		if w~=width then
+			if not bump then
+				move("left")
+				move("forward")
+			else
+				move("right")
+				move("forward")
+			end
+			if bump then
+				move("right")
+			else
+				move("left")
+			end
+			bump = not bumb
+		end
+	end
+	-- return
+	if not bump then
+		move("left")
+		move("forward")
+		move("left")
+		for i, length do
+			move("forward")
+			if l~=length then
+				move("forward")
+			end
+		end
+	else
+		move("forward")
+	end
+	move("left")
+	if width = 1 then
+		move("forward"
+	else
+		for i=1, width - 1 do
+			move("forward")
+		end
+		if not bump then
+			move("forward")
+		end
+	end
+	move("left")	
 end
