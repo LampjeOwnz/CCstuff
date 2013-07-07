@@ -37,7 +37,7 @@ function checkAPI()
  
 		clientVersion = button.version()
  
-		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/version.txt")
+		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/APIversions.txt")
 		versionRequest.readLine()
 		line = versionRequest.readLine()
 		serverVersion = line	

@@ -1,0 +1,48 @@
+-- Version Information
+-- Turtle API
+apiVersion = "0.1"
+
+function version()
+  return apiVersion
+end
+
+function move(direction)
+	if string.lower(direction) == "down" then
+		if turtle.drtrctDown() then
+			turtle.digDown()
+			sleep(1)
+		end
+		while not turtle.down() do
+			turtle.digDown()
+			sleep(1)
+		end
+	end
+	
+	if string.lower(direction) == "forward" then
+		if turtle.detect() then
+			turtle.dig()
+		end
+		while not turtle.forward() do
+			turtle.dig()
+			sleep(1)
+		end
+	end
+	
+	if string.lower(direction) == "up" then
+		if turtle.detedUp() then
+			turtle.digUp()
+		end
+		while not turtle.up() do
+			turtle.digUp()
+			sleep(1)
+		end
+	end
+	
+	if string.lower(direction) == "left" then
+		turtle.turnLeft()
+	end
+	
+	if string.lower(direction) == "right" then
+		turtle.turnRight()
+	end
+end
