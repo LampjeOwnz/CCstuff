@@ -157,13 +157,9 @@ function area(length, width, hight)
 		move("left")
 		for i=1, length do
 			if i~=length then
-				print("derp2")
 				move("forward")
 			end
 		end
-	else
-		print("derp")
-		move("forward")
 	end
 	move("left")
 	if width == 1 then
