@@ -157,7 +157,7 @@ function area(length, width, hight)
 		move("left")
 		for i=1, length do
 			move("forward")
-			if l~=length then
+			if i~=length then
 				move("forward")
 			end
 		end
