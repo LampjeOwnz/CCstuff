@@ -74,4 +74,5 @@ checkAPI()
 
 os.loadAPI("turt")
 
-turt.move("pilar", false)
+turt.refuel()
+turt.move("pilar")

@@ -1,15 +1,14 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.3"
+apiVersion = "0.1"
 
 function version()
   return apiVersion
 end
 
-local seltur = 1
-
 -- Turtle item (full) detection, when farmMode is true.
 function turtfull()
+	print("Checking if turtle is full and drop all items.")
 	a = turtle.getItemcount(1) b = turtle.getItemcount(2) c = turtle.getItemcount(3) d = turtle.getItemcount(4)
 	e = turtle.getItemcount(5) f = turtle.getItemcount(6) g = turtle.getItemcount(7) h = turtle.getItemcount(8)
 	i = turtle.getItemcount(9) j = turtle.getItemcount(10) k = turtle.getItemcount(11) l = turtle.getItemcount(12)
@@ -21,21 +20,22 @@ function turtfull()
 		turtle.select(13) turtle.drop() turtle.select(14) turtle.drop() turtle.select(15) turtle.drop()
 	end
 	turtle.select(1)
+	sleep(1)
 end
 
 -- Turtle drop all but fuel slot function.
 function dropall()
+	print("Drop all items.")
 	turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
 	turtle.select(5) turtle.drop() turtle.select(6) turtle.drop() turtle.select(7) turtle.drop() turtle.select(8) turtle.drop()
 	turtle.select(9) turtle.drop() turtle.select(10) turtle.drop() turtle.select(11) turtle.drop() turtle.select(12) turtle.drop()
 	turtle.select(13) turtle.drop() turtle.select(14) turtle.drop() turtle.select(15) turtle.drop()
 	turtle.select(1)
+	sleep(1)
 end
 
 -- Needs a chest below it.
-function refuel(direction, farmMode)
-	d = direction
-	f = farmMode
+function refuel()
 	print("refueling.")
 	items = turtle.getItemCount(16)
 	turtle.select(16)
@@ -44,26 +44,16 @@ function refuel(direction, farmMode)
 		turtle.suckDown()
 		turtle.refuel()
 		turtle.select(1)
+	else
+		turtle.refuel()
+		turtle.select(1)
 	end
 	sleep(1)
-	move(d, f)
 end
 		
 
 -- Turtle movements and farmMode.
-function move(direction, farmMode)
-	fuellvl = turtle.getFuelLevel()
-	d = direction
-	f = farmMode
-	if fuellvl < 100 then
-		refuel(d, f)
-	end
-	
-	if farmMode == true then
-		turtfull()
-		move(d, f)
-		farmMode = false
-	end
+function move(direction)
 	if string.lower(direction) == "down" then
 		if turtle.detectDown() then
 			turtle.digDown()
@@ -105,13 +95,13 @@ function move(direction, farmMode)
 	-- Removing 1 by 1 pilar
 	if string.lower(direction) == "pilar" then
 		steps = 1
-		move("forward", false)
+		move("forward")
 		while turtle.detectUp() do
 			move("up", false)
 			steps = steps + 1
 		end
 		while steps > 1 do
-			move("down", false)
+			move("down")
 			steps = steps - 1
 		end
 	end
