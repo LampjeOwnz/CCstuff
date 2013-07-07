@@ -1,5 +1,5 @@
 -- Version Information
--- Spawner
+-- Spawner Program
 prgrVersion = "0.5"
 m = peripheral.wrap("top")
 
@@ -92,7 +92,7 @@ end
 -- Making the button for the monitor + executing state function.
 function knoppen()
 	-- A Button
-	--		Button name,  The label,  Mode,   x1 y1 x2 y2, First col, sec color,   text color,   Function to do.
+	--		Button name,  The label,  Mode,  x1 y1 x2 y2, First col, sec color,   text color,   Function to do.
 	button.add("Abutton", "White", "toggle", 2, 2, 8, 4, colors.red, colors.white, colors.black, 
 	function ()
 		print("White touched")

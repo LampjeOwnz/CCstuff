@@ -1,5 +1,5 @@
 -- Version Information
--- Button
+-- Button API
 apiVersion = "1.0"
 
 -- Defualt flash timer
@@ -19,8 +19,7 @@ function setMon(side)
 end
  
 -- Determines if a point is inside a rectangle
-function ptinrect(x1, y1, x2, y2)
- 
+function ptinrect(x1, y1, x2, y2) 
   if (x >= x1) and (x <= x2) and (y >= y1) and (y <= y2) then
     return true
   else
@@ -97,8 +96,7 @@ function flashtime(flashtimer)
 end
 
 -- Makes a button flash between two colors
-function flash(button)
-	
+function flash(button)	
   --Draw the button in its secondary color
   m.setBackgroundColor(buttons[button].secColor)
   for y = buttons[button].y1, buttons[button].y2 do
@@ -127,7 +125,6 @@ end
  
 -- Toggles the button on or off depending on the variable in the array
 function toggle(button)
- 
   -- If the button is on, turn it off
   if buttons[button].toggled == true then
  
@@ -171,8 +168,7 @@ function toggle(button)
 end
  
 -- Draws the buttons on the screen
-function draw()
- 
+function draw() 
   m.clear()
  
   for button = 1, #buttons do
@@ -234,7 +230,6 @@ end
  
 -- Waits for a touch on an adjacent advanced monitor and responds accordingly
 function check()
- 
   event, side, x, y = os.pullEvent("monitor_touch")
  
   -- Match it to a button and execute the function

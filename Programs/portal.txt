@@ -1,5 +1,5 @@
 -- Version Information
--- Portal
+-- Portal Program
 prgrVersion = "0.7"
 m = peripheral.wrap("top")
 
@@ -37,9 +37,9 @@ function checkAPI()
  
 		clientVersion = button.version()
  
-		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/Buttonversion.txt")
-		serverVersion = versionRequest.readAll()
- 
+		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/version.txt")
+		serverVersion = versionRequest.readLine() versionRequest.readLine()
+		
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
 			sleep(1)
