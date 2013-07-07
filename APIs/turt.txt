@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.2"
+apiVersion = "0.3"
 
 function version()
   return apiVersion
@@ -36,12 +36,12 @@ end
 function refuel()
 	print("refueling "..seltur..".")
 	fuel = turtle.select(seltur)
+	items = turtle.getItemCount(16)
 	if fuel == 263 then
 		turtle.refuel()
 	else
 		if seltur < 16 then
 			seltur = seltur + 1
-			items = turtle.getItemcount(16)
 		end
 		if seltur == 16 and items == 0 then
 			print("Looking for a chest with coal")
