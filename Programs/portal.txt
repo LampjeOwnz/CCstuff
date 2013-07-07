@@ -52,11 +52,9 @@ function checkAPI()
 		end
 		
 		file = fs.open("version.txt", "r")
+		file.readLine()
 		line = file.readLine()
-		if line == "--" then
-			line = file.readLine()
-			serverVersion = line
-		end
+		serverVersion = line
 		
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
