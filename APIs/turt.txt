@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.3"
+apiVersion = "0.2"
 
 function version()
   return apiVersion
@@ -86,7 +86,7 @@ function move(direction, farmMode)
 	end
 	
 	if string.lower(direction) == "up" then
-		if turtle.detedUp() then
+		if turtle.detectUp() then
 			turtle.digUp()
 		end
 		sleep(1)
