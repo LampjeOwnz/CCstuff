@@ -74,4 +74,4 @@ checkAPI()
 
 os.loadAPI("turt")
 print("homo")
-turt.move("foward", false)
+turt.move("forward", false)
