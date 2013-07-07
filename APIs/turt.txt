@@ -42,8 +42,7 @@ function refuel()
 		if seltur < 16 then
 			seltur = seltur + 1
 		end
-		if seltur == 16 and not fuel == 268 then
-			turtle.drop()
+		if seltur == 16 and fuel == 0 then
 			print("Looking for a chest with coal")
 			turtle.suckDown()
 			turtle.select(1)
