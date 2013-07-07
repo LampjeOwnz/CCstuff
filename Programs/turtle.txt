@@ -74,7 +74,4 @@ checkAPI()
 
 os.loadAPI("turt")
 
-turt.move("forward", false)
-turt.move("up", false)
-turt.move("up", false)
-turt.move("up", false)
+turt.move("pilar", false)
