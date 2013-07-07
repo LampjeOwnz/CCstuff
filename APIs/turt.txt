@@ -106,7 +106,7 @@ function move(direction, farmMode)
 	if string.lower(direction) == "wall" then
 		steps = 1
 		check = turtle.detect()
-		for check == false do
+		while check == false do
 			move("forward", false)
 		end
 		while turtle.detectUp() do
