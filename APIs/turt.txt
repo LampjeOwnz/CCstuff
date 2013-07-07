@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.3"
+apiVersion = "0.2"
 
 function version()
   return apiVersion
@@ -99,8 +99,9 @@ function move(direction, farmMode)
 	if string.lower(direction) == "wall" then
 		steps = 1
 		while not turtle.detect() do
-			move("forward", false)
+			turtle.forward()
 		end
+		move("forward", false)
 		while turtle.detectUp() do
 			turtle.dig()
 			move("up", false)
