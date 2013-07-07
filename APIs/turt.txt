@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.16"
+apiVersion = "0.170"
 
 function version()
   return apiVersion
@@ -155,7 +155,7 @@ function area(length, width, hight)
 		move("left")
 		move("forward")
 		move("left")
-		for i, length do
+		for i=1, length do
 			move("forward")
 			if l~=length then
 				move("forward")
