@@ -34,7 +34,7 @@ end
 
 -- Needs a chest below it.
 function refuel()
-	print("refueling")
+	print("refueling"..seltur..".")
 	fuel = turtle.select(seltur)
 	if fuel == 263 then
 		turtle.refuel()
