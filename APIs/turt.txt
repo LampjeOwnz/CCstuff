@@ -6,7 +6,69 @@ function version()
   return apiVersion
 end
 
-function move(direction)
+-- Turtle item (full) detection, when farmMode is true
+function turtfull()
+	a = turtle.getItemcount(1)
+	b = turtle.getItemcount(2)
+	c = turtle.getItemcount(3)
+	d = turtle.getItemcount(4)
+	e = turtle.getItemcount(5)
+	f = turtle.getItemcount(6)
+	g = turtle.getItemcount(7)
+	h = turtle.getItemcount(8)
+	i = turtle.getItemcount(9)
+	j = turtle.getItemcount(10)
+	k = turtle.getItemcount(11)
+	l = turtle.getItemcount(12)
+	m = turtle.getItemcount(13)
+	n = turtle.getItemcount(14)
+	o = turtle.getItemcount(15)
+	p = turtle.getItemcount(16)
+	if a and b and c and d and e and f and g and h and i and j and k and l and m and n and o and p == 64 then
+		turtle.select(1) turtle.drop()
+		turtle.select(2) turtle.drop()
+		turtle.select(3) turtle.drop()
+		turtle.select(4) turtle.drop()
+		turtle.select(5) turtle.drop()
+		turtle.select(6) turtle.drop()
+		turtle.select(7) turtle.drop()
+		turtle.select(8) turtle.drop()
+		turtle.select(9) turtle.drop()
+		turtle.select(10) turtle.drop()
+		turtle.select(11) turtle.drop()
+		turtle.select(12) turtle.drop()
+		turtle.select(13) turtle.drop()
+		turtle.select(14) turtle.drop()
+		turtle.select(15) turtle.drop()
+		turtle.select(15) turtle.drop()
+	end
+end
+
+-- Turtle drop all function.
+function dropall()
+	turtle.select(1) turtle.drop()
+	turtle.select(2) turtle.drop()
+	turtle.select(3) turtle.drop()
+	turtle.select(4) turtle.drop()
+	turtle.select(5) turtle.drop()
+	turtle.select(6) turtle.drop()
+	turtle.select(7) turtle.drop()
+	turtle.select(8) turtle.drop()
+	turtle.select(9) turtle.drop()
+	turtle.select(10) turtle.drop()
+	turtle.select(11) turtle.drop()
+	turtle.select(12) turtle.drop()
+	turtle.select(13) turtle.drop()
+	turtle.select(14) turtle.drop()
+	turtle.select(15) turtle.drop()
+	turtle.select(15) turtle.drop()
+end
+
+-- Turtle movements and farmMode.
+function move(direction, farmMode)
+	if farmMode == true then
+		turtfull()
+	end
 	if string.lower(direction) == "down" then
 		if turtle.drtrctDown() then
 			turtle.digDown()
@@ -44,5 +106,19 @@ function move(direction)
 	
 	if string.lower(direction) == "right" then
 		turtle.turnRight()
+	end
+	
+	-- Removing 1 by 1 pilar
+	if string.lower(direction) == "pilar" then
+		steps = 1
+		move("forward")
+		while turtle.detectUp() do
+			move("up")
+			steps = steps + 1
+		end
+		while steps > 1 do
+			move("down")
+			steps = steps - 1
+		end
 	end
 end
