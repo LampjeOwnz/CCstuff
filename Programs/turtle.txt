@@ -73,5 +73,5 @@ end
 checkAPI()
 
 os.loadAPI("turt")
-print("homo")
-turt.move("wall", false)
+
+turt.move("pilar", false)

@@ -34,28 +34,35 @@ end
 
 -- Needs a chest below it.
 function refuel(direction, farmMode)
+	d = direction
+	f = farmMode
+	print("refueling.")
 	items = turtle.getItemCount(16)
 	turtle.select(16)
 	if items == 0 then
+		print("Looking for chest below me")
 		turtle.suckDown()
 		turtle.refuel()
 		turtle.select(1)
 	end
-	print("refueling.")
 	sleep(1)
-	move(direction, farmMode)
+	move(d, f)
 end
 		
 
 -- Turtle movements and farmMode.
 function move(direction, farmMode)
 	fuellvl = turtle.getFuelLevel()
+	d = direction
+	f = farmMode
 	if fuellvl < 100 then
-		refuel(direction, farmMode)
+		refuel(d, f)
 	end
 	
 	if farmMode == true then
 		turtfull()
+		move(d, f)
+		farmMode = false
 	end
 	if string.lower(direction) == "down" then
 		if turtle.detectDown() then
@@ -95,12 +102,11 @@ function move(direction, farmMode)
 		turtle.turnRight()
 	end
 	
-	-- Removing 1 by 2 deep wall
-	if string.lower(direction) == "wall" then
+	-- Removing 1 by 1 pilar
+	if string.lower(direction) == "pilar" then
 		steps = 1
 		move("forward", false)
 		while turtle.detectUp() do
-			turtle.dig()
 			move("up", false)
 			steps = steps + 1
 		end
