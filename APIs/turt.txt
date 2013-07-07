@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.176"
+apiVersion = "0.177"
 
 function version()
   return apiVersion
@@ -192,5 +192,7 @@ function area(length, width, hight)
 		end
 		turth = 1
 	end
-	print("Area cleared Length: "..length.." Width: "..width.." Hight: "..hight..".")
+	if turth < 2 then
+		print("Area cleared Length: "..length.." Width: "..width.." Hight: "..hight..".")
+	end
 end
