@@ -38,24 +38,9 @@ function checkAPI()
 		clientVersion = button.version()
  
 		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/version.txt")
-		data = versionRequest.readAll()
-		
-		if fs.exists("version.txt") then
-			fs.delete("version.txt")
-			file = fs.open("version.txt", "w")
-			file.write(data)
-			file.close()
-		else
-			file = fs.open("version.txt", "w")
-			file.write(data)
-			file.close()
-		end
-		
-		file = fs.open("version.txt", "r")
-		file.readLine()
-		line = file.readLine()
-		serverVersion = line
-		file.close()
+		versionRequest.readLine()
+		line = versionRequest.readLine()
+		serverVersion = line	
 		
 		if serverVersion == clientVersion then
 			print("You have the newest version of the API.")
