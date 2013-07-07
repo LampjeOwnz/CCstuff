@@ -40,7 +40,7 @@ function refuel()
 	if fuel == 263 then
 		turtle.refuel()
 	else
-		if seltur < 16 then
+		if seltur <= 16 then
 			seltur = seltur + 1
 		end
 		if seltur == 16 and items == 0 then
