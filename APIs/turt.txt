@@ -1,13 +1,12 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.180"
+apiVersion = "0.181"
 
 function version()
   return apiVersion
 end
 
 local turth = 1
-local turthb = 1
 
 -- Turtle item (full) detection, when farmMode is true. not fuel slot(16).
 function turtfull()
@@ -130,7 +129,7 @@ function move(direction)
 end
 
 function area(length, width, hight)
-	print("Clearing area Length: "..length.." Width: "..width.." Hight: "..hight..".")
+	print("Clearing area Length: \n"..length.." Width: "..width.." Hight: "..hight..".")
 	while turth <= hight do
 		bump = false
 		for w=1, width do
@@ -156,33 +155,63 @@ function area(length, width, hight)
 			end
 		end
 		-- return
-		if not bump then
+		if width == 2 or width == 4 or width == 6 or width == 8 or width == 10 or width == 12 or width == 14 or width == 16 or width == 18 or width == 20 or width == 22 or width == 24 then
+			if not bump then
+				move("left")
+				move("forward")
+				move("left")
+				for i=1, length do
+					if i~=length then
+						move("forward")
+					end
+				end
+			end
 			move("left")
-			move("forward")
-			move("left")
-			for i=1, length do
-				if i~=length then
+			if width == 1 then
+				move("forward")
+			else
+				for i=1, width - 1 do
+					move("forward")
+				end
+				if not bump then
 					move("forward")
 				end
 			end
-		end
-		move("left")
-		if width == 1 then
-			move("forward")
-		else
-			for i=1, width - 1 do
-				move("forward")
+			move("left")
+			if turth < hight then
+				move("up")
 			end
+			turth = turth +1
+		elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25 then
+			width = width -1
 			if not bump then
+				move("right")
 				move("forward")
+				move("right")
+				for i=1, length do
+					if i~=length then
+						move("forward")
+					end
+				end
 			end
-		end
-		move("left")
-		if turth < hight then
-			move("up")
-		end
-		turth = turth +1
-		-- area(length, width, hight)
+			move("left")
+			if width == 1 then
+				move("forward")
+			else
+				for i=1, width - 1 do
+					move("forward")
+				end
+				if not bump then
+					move("forward")
+				end
+			end
+			move("left")
+			if turth < hight then
+				move("up")
+			end
+			turth = turth +1
+			width = width +1
+		end	
 	end
 	if turth > hight then	
 		while turth > 2 do
