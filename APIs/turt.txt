@@ -1,6 +1,6 @@
 -- Version Information
 -- Turtle API
-apiVersion = "0.181"
+apiVersion = "0.182"
 
 function version()
   return apiVersion
@@ -183,7 +183,7 @@ function area(length, width, hight)
 			end
 			turth = turth +1
 		elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25 then
-			width = width -1
+			width = width -2
 			if not bump then
 				move("right")
 				move("forward")
@@ -210,7 +210,7 @@ function area(length, width, hight)
 				move("up")
 			end
 			turth = turth +1
-			width = width +1
+			width = width +2
 		end	
 	end
 	if turth > hight then	
