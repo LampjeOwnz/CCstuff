@@ -129,96 +129,115 @@ function move(direction)
 end
 
 function area(length, width, hight)
-	print("Clearing area Length: \n"..length.." Width: "..width.." Hight: "..hight..".")
-	while turth <= hight do
-		bump = false
-		for w=1, width do
-			for l=1, length do
-				if l~=length then
-					move("forward")
-				end
-			end
-			if w~=width then
-				if not bump then
-					move("left")
-					move("forward")
-				else
-					move("right")
-					move("forward")
-				end
-				if bump then
-					move("right")
-				else
-					move("left")
-				end
-				bump = not bump
-			end
-		end
-		-- return
-		if width == 2 or width == 4 or width == 6 or width == 8 or width == 10 or width == 12 or width == 14 or width == 16 or width == 18 or width == 20 or width == 22 or width == 24 then
-			if not bump then
-				move("left")
-				move("forward")
-				move("left")
-				for i=1, length do
-					if i~=length then
+	if length < 31 and width < 31 and hight < 31 then
+		start = true
+	else
+		start = false
+	end
+	if start == true then
+		print("Clearing area Length: "..length.." \nWidth: "..width.." Higth: "..hight..".")
+		while turth <= hight do
+			bump = false
+			for w=1, width do
+				for l=1, length do
+					if l~=length then
 						move("forward")
 					end
 				end
-			end
-			move("left")
-			if width == 1 then
-				move("forward")
-			else
-				for i=1, width - 1 do
-					move("forward")
+				if w~=width then
+					if not bump then
+						move("left")
+						move("forward")
+					else
+						move("right")
+						move("forward")
+					end
+					if bump then
+						move("right")
+					else
+						move("left")
+					end
+					bump = not bump
 				end
+			end
+			-- return
+			if width == 2 or width == 4 or width == 6 or width == 8 or width == 10 or width == 12 or width == 14 or width == 16 or width == 18 or width == 20 or width == 22 or width == 24
+				or width == 26 or width == 28 or width == 30 then
 				if not bump then
+					move("left")
 					move("forward")
+					move("left")
+					for i=1, length do
+						if i~=length then
+							move("forward")
+						end
+					end
 				end
-			end
-			move("left")
-			if turth < hight then
-				move("up")
-			end
-			turth = turth +1
-		elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25 then
-			width = width -2
-			if not bump then
-				move("right")
-				move("forward")
-				move("right")
-				for i=1, length do
-					if i~=length then
+				move("left")
+				if width == 1 then
+					move("forward")
+				else
+					for i=1, width - 1 do
+						move("forward")
+					end
+					if not bump then
 						move("forward")
 					end
 				end
-			end
-			move("left")
-			if width == 1 then
-				move("forward")
-			else
-				for i=1, width - 1 do
-					move("forward")
+				move("left")
+				if turth < hight then
+					move("up")
 				end
+				turth = turth +1
+			elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25
+				or width == 27 or width == 29 then
+				width = width -2
 				if not bump then
+					move("right")
 					move("forward")
+					move("right")
+					for i=1, length do
+						if i~=length then
+							move("forward")
+						end
+					end
 				end
-			end
-			move("left")
-			if turth < hight then
-				move("up")
-			end
-			turth = turth +1
-			width = width +2
-		end	
-	end
-	if turth > hight then	
-		while turth > 2 do
-			move("down")
-			turth = turth -1
+				move("left")
+				if width == 1 then
+					move("forward")
+				else
+					for i=1, width - 1 do
+						move("forward")
+					end
+					if not bump then
+						move("forward")
+					end
+				end
+				move("left")
+				if turth < hight then
+					move("up")
+				end
+				turth = turth +1
+				width = width +2
+			end	
 		end
-		turth = 1
+		if turth > hight then	
+			while turth > 2 do
+				move("down")
+				turth = turth -1
+			end
+			turth = 1
+		end
+		print("Area cleared.")
+	else
+		print("Current Length: "..length.." Width: "..width.." \nHigth: "..hight..".")
+		if length >30 then
+			print("Length is to high max is 30")
+		elseif width >30 then
+			print("Width is to high max is 30")
+		elseif hight >20 then
+			print("Higth is to high max is 30")
+		end
+		print("Max area is Length:30 X Width:30 X Hight:30")
 	end
-	print("Area cleared.")
 end
