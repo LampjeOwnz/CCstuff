@@ -37,7 +37,7 @@ function checkAPI()
  
 		clientVersion = button.version()
  
-		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/Buttonversion.txt")
+		versionRequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/APIversions.txt")
 		serverVersion = versionRequest.readAll()
  
 		if serverVersion == clientVersion then

@@ -8,7 +8,7 @@ end
 
 local turth = 1
 
--- Turtle item (full) detection, when farmMode is true. not fuel slot(16).
+-- Turtle item (full) detection, not fuel slot(16).
 function turtfull()
 	print("Checking if turtle is full and drop all items. not fuel slot(16).")
 	a = turtle.getItemcount(1) b = turtle.getItemcount(2) c = turtle.getItemcount(3) d = turtle.getItemcount(4)
@@ -25,7 +25,7 @@ function turtfull()
 	sleep(1)
 end
 
--- Turtle drop all but fuel slot function. not fuel slot(16).
+-- Turtle drop all but fuel slot function.
 function dropall()
 	print("Drop all items. nt fuel slot(16).")
 	turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
