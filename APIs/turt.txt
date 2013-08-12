@@ -237,7 +237,7 @@ function area(length, width, hight)
 		if width >30 then
 			print("Width is to high max is 30")
 		end
-		if hight >20 then
+		if hight >30 then
 			print("Higth is to high max is 30")
 		end
 		print("Max area is Length:30 X Width:30 \nX Hight:30")
