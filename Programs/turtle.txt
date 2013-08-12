@@ -75,4 +75,4 @@ checkAPI()
 os.loadAPI("turt")
 
 turt.fuellvl()
-turt.area(6, 31, 2)
+turt.area(9, 9, 1)
