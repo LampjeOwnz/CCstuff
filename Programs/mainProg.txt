@@ -1,0 +1,88 @@
+rednet.open("right")
+local miners = {}
+local loaders = {}
+local fuelBosses = {}
+local tArgs = {...}
+
+
+function findTurtles()
+   local gotMsg = true
+   local id, msg, dist
+   rednet.broadcast("checkIn")
+   while gotMsg do
+      id,msg,dist = rednet.receive(1)
+      if msg == "Miner" then
+         print(id..":"..msg)
+         miners[#miners+1] = id
+      elseif msg == "chunkloader" then
+         print(id..":"..msg)
+         loaders[#loaders+1] = id
+      elseif msg == "fuelBoss" then
+         print(id..":"..msg)
+         fuelBosses[#fuelBosses+1] = id
+         miners[#miners+1] = id
+      elseif msg == "Done" then
+      else
+         print("Done")
+         gotMsg = false
+      end
+   end      
+end
+
+function checkFuel()
+   if turtle.getFuelLevel() < 900 then
+      rednet.send(fuelBosses[1], "fuelBoss")
+      rednet.receive()
+      turtle.select(3)
+      turtle.refuel()
+      turtle.select(1)
+   end
+end
+
+function place()
+   turtle.select(1)
+   turtle.place()
+   turtle.down()
+   turtle.select(2)
+   turtle.place()
+   turtle.attack()
+end
+
+function remove()
+   turtle.select(2)
+   turtle.dig()
+   turtle.up()
+   turtle.select(1)
+   turtle.dig()
+end
+
+function minersGo()
+   for x,y in pairs(miners) do
+      rednet.send(y, "cycle")
+   end
+   place()
+   local total = 0
+   while total < #miners do
+      local id,msg,dist=rednet.receive()
+      total = total+1
+   end   
+   remove()
+end
+
+function moveLoaders()
+   for x,y in pairs(loaders) do
+      rednet.send(y,"chunkLoad")
+      rednet.receive()
+      sleep(0.5)
+   end
+end
+
+findTurtles()
+if tArgs[1] == nil then tArgs[1] = 1 end
+for i = 1,tArgs[1] do
+   print("Interation: "..tostring(i).." of "..tostring(tArgs[1]))
+   minersGo()
+   turtle.forward()
+   checkFuel()
+   moveLoaders()
+end

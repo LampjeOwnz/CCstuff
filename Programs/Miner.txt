@@ -1,0 +1,96 @@
+rednet.open("right")
+local func
+local tArgs = {...}
+
+function cleanup()
+   for i = 1,12 do
+      turtle.select(i)
+      turtle.dropDown()
+   end
+end
+
+function place()
+   turtle.select(16)
+   turtle.place()
+   turtle.down()
+   turtle.select(15)
+   turtle.place()
+   turtle.select(14)
+   turtle.placeDown()
+end
+
+function remove()
+   turtle.select(14)
+   turtle.digDown()
+   turtle.select(15)
+   turtle.dig()
+   turtle.up()
+   turtle.select(16)
+   turtle.dig()
+end
+
+function fuel()
+   turtle.select(13)
+   turtle.placeUp()
+   turtle.select(1)
+   turtle.suckUp()
+   turtle.dropUp(turtle.getItemCount(1) - 4)
+   turtle.refuel()
+   turtle.select(13)
+   turtle.digUp()
+end
+
+function fuelBoss()
+  turtle.select(13)
+  turtle.placeUp()
+  turtle.select(1)
+  turtle.suckUp()
+  turtle.dropUp(turtle.getItemCount(1) - 4)
+  turtle.select(13)
+  turtle.digUp()
+  turtle.up()
+  turtle.turnRight()
+  turtle.select(1)
+  turtle.drop()
+  turtle.turnLeft()
+  turtle.down()
+end
+
+function checkFuel()
+   if turtle.getFuelLevel() < 400 then
+      fuel()
+   end
+end
+
+function cycle()
+   place()
+   sleep(25)
+   while turtle.getItemCount(1) > 0 do
+      cleanup()
+      sleep(2)
+   end
+   remove()
+   checkFuel()
+   turtle.forward()
+end
+
+function checkIn(fromID)
+   rednet.send(fromID, tArgs[1])
+end
+
+function chunkLoad()
+   turtle.select(16)
+   turtle.digUp()
+   checkFuel()
+   turtle.select(16)
+   turtle.forward()
+   turtle.placeUp()
+end
+
+while true do
+   local id,msg,dist = rednet.receive()
+   func = loadstring(msg.."(...)")
+   setfenv(func, getfenv())
+   func(id)
+   rednet.send(id,"Done")
+end

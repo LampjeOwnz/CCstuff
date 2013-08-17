@@ -1,0 +1,7 @@
+request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/spawner.txt")
+-- request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/portal.txt")
+data = request.readAll()
+file = fs.open("spawner", "w")
+-- file = fs.open("portal", "w")
+file.write(data)
+file.close()
