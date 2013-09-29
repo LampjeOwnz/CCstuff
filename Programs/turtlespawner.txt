@@ -1,0 +1,40 @@
+rednet.open("right")
+local func
+
+function refuel()
+	turtle.select(16)
+	if fuellvl < 100 then
+		refuel()
+		turtle.select(1)
+	end
+end
+
+refuel()
+
+function netherbook()
+	turtle.select(1)
+	turtle.drop()
+end
+
+function theendbook()
+	turtle.select(2)
+	turtle.drop()
+end
+
+function miningagebook()
+	turtle.select(3)
+	turtle.drop()
+end
+
+function oilfieldbook()
+	turtle.select(4)
+	turtle.drop()
+end
+
+while true do
+   local id,msg,dist = rednet.receive()
+   func = loadstring(msg.."(...)")
+   setfenv(func, getfenv())
+   func(id)
+   rednet.send(id,"Done")
+end

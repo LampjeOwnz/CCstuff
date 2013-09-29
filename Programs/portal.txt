@@ -3,6 +3,8 @@
 prgrVersion = "0.7"
 m = peripheral.wrap("top")
 
+local turtID = 668
+
 function downloadAPI()
 	print("Updating...")
 	sleep(1)
@@ -105,19 +107,23 @@ function redstone()
 	dstate = button.getState("Dbutton")
 	--estate = button.getState("Ebutton")
 	if astate == false then
-		rs.setBundledOutput("bottom", colors.white + colors.orange)
+		rednet.send(turtID, "netherbook")
+		rednet.receive()
 		take()
 	end
 	if bstate == false then
-		rs.setBundledOutput("bottom", colors.white + colors.magenta)
+		rednet.send(turtID, "theendbook")
+		rednet.receive()
 		take()
 	end
 	if cstate == false then
-		rs.setBundledOutput("bottom", colors.white + colors.lightBlue)
+		rednet.send(turtID, "miningagebook")
+		rednet.receive()
 		take()
 	end
 	if dstate == false then
-		rs.setBundledOutput("bottom", colors.white + colors.yellow)
+		rednet.send(turtID, "oilfieldbook")
+		rednet.receive()
 		take()
 	end
 	--if estate == false then
