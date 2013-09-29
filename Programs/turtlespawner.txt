@@ -32,6 +32,14 @@ function oilfieldbook()
 	turtle.drop()
 end
 
+function mback()
+	turtle.back()
+end
+
+function mfoward()
+	turtle.forward()
+end
+
 while true do
    local id,msg,dist = rednet.receive()
    func = loadstring(msg.."(...)")
