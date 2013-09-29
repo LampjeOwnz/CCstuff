@@ -102,7 +102,7 @@ function redstone()
 	astate = button.getState("Abutton")
 	bstate = button.getState("Bbutton")
 	cstate = button.getState("Cbutton")
-	-state = button.getState("Dbutton")
+	dstate = button.getState("Dbutton")
 	--estate = button.getState("Ebutton")
 	if astate == false then
 		rs.setBundledOutput("bottom", colors.white + colors.orange)
