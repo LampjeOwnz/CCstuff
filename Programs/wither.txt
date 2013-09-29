@@ -1,3 +1,7 @@
+rednet.open("right")
+local func
+rs.setBundledOutput("bottom", colors.white)
+
 function refuel()
 	turtle.select(1)
 	if fuellvl < 100 then
