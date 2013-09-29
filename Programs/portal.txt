@@ -93,9 +93,8 @@ end
 
 function take()
 	sleep(5)
-	rs.setBundledOutput("bottom", colors.black)
+	rs.setBundledOutput("bottom", colors.white)
 	sleep(1)
-	rs.setBundledOutput("bottom", 0)
 end
 
 -- Redstone functions
@@ -106,15 +105,15 @@ function redstone()
 	--dstate = button.getState("Dbutton")
 	--estate = button.getState("Ebutton")
 	if astate == false then
-		rs.setBundledOutput("bottom", colors.orange)
+		rs.setBundledOutput("bottom", colors.black + colors.orange)
 		take()
 	end
 	if bstate == false then
-		rs.setBundledOutput("bottom", colors.magenta)
+		rs.setBundledOutput("bottom", colors.white + colors.magenta)
 		take()
 	end
 	if cstate == false then
-		rs.setBundledOutput("bottom", colors.lightBlue)
+		rs.setBundledOutput("bottom", colors.black + colors.lightBlue)
 		take()
 	end
 	--if dstate == false then
