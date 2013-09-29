@@ -1,6 +1,11 @@
 rednet.open("right")
 local func
-rs.setBundledOutput("bottom", colors.white)
+
+function redStonePulse()
+	rs.setBundledOutput("bottom", colors.white)
+	sleep(1)
+	rs.setBundledOutput("bottom", 0)
+end
 
 function refuel()
 	turtle.select(1)
@@ -47,6 +52,7 @@ function spawnWither()
 	turtle.back()
 	turtle.back()
 	turtle.place()
+	redStonePulse()
 end
 
 while true do
