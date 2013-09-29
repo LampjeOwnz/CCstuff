@@ -2,6 +2,7 @@
 -- Portal Program
 prgrVersion = "0.7"
 m = peripheral.wrap("top")
+rednet.open("right")
 
 local turtID = 668
 

@@ -3,10 +3,8 @@ local func
 
 function refuel()
 	turtle.select(16)
-	if fuellvl < 100 then
-		refuel()
-		turtle.select(1)
-	end
+	turtle.refuel()
+	turtle.select(1)
 end
 
 refuel()
