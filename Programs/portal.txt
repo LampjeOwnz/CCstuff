@@ -92,7 +92,7 @@ function Resetmonitor()
 end
 
 function take()
-	sleep(1)
+	sleep(5)
 	rs.setBundledOutput("back", colors.black)
 	sleep(1)
 	rs.setBundledOutput("back", 0)
