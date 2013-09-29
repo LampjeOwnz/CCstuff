@@ -1,0 +1,54 @@
+function refuel()
+	turtle.select(1)
+	if fuellvl < 100 then
+		refuel()
+	end
+end
+
+function go()
+	refuel()
+	turtle.select(4)
+	turt.move("forward")
+	turt.move("forward")
+	turt.move("forward")
+end
+
+function place()
+-- Soulsand
+	turtle.select(16)
+	turt.move("down")
+	turt.move("down")
+	turtle.placeDown()
+	turt.move("left")
+	turtle.place()
+	turt.move("right")
+	turt.move("right")
+	turtle.polace()
+	turt.move("up")
+	turtle.placeDown()
+end
+
+function spawnWither()
+-- Skuls
+	turtle.select(13)
+	turtle.place()
+	turt.move("left")
+	turt.move("left")
+	turtle.polace()
+	turt.move("right")
+-- Spawning wither and moving back
+	turtle.back()
+	turtle.polace()
+	turtle.select(4)
+	turtle.back()
+	turtle.back()
+	turtle.place()
+end
+
+while true do
+   local id,msg,dist = rednet.receive()
+   func = loadstring(msg.."(...)")
+   setfenv(func, getfenv())
+   func(id)
+   rednet.send(id,"Done")
+end
