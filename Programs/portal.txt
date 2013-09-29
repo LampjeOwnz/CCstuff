@@ -75,7 +75,7 @@ os.loadAPI("button")
 button.setMon("top")
 
 function Resetcable()
-	rs.setBundledOutput("back", colors.white)
+	rs.setBundledOutput("bottom", colors.white)
 end
 
 Resetcable()
@@ -87,15 +87,15 @@ function Resetmonitor()
 	button.setState("Cbutton", true)
 	--button.setState("Dbutton", true)
 	--button.setState("Ebutton", true)
-	rs.setBundledOutput("back", colors.white)
+	rs.setBundledOutput("bottom", colors.white)
 	button.draw()
 end
 
 function take()
-	sleep(2)
-	rs.setBundledOutput("back", colors.black)
+	--sleep(2)
+	rs.setBundledOutput("bottom", colors.black)
 	sleep(1)
-	rs.setBundledOutput("back", 0)
+	rs.setBundledOutput("bottom", 0)
 end
 
 -- Redstone functions
