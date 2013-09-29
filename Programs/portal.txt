@@ -106,15 +106,15 @@ function redstone()
 	--dstate = button.getState("Dbutton")
 	--estate = button.getState("Ebutton")
 	if astate == false then
-		rs.setBundledOutput("back", colors.orange)
+		rs.setBundledOutput("bottom", colors.orange)
 		take()
 	end
 	if bstate == false then
-		rs.setBundledOutput("back", colors.magenta)
+		rs.setBundledOutput("bottom", colors.magenta)
 		take()
 	end
 	if cstate == false then
-		rs.setBundledOutput("back", colors.lightBlue)
+		rs.setBundledOutput("bottom", colors.lightBlue)
 		take()
 	end
 	--if dstate == false then
@@ -129,7 +129,7 @@ end
 -- Making the button for the monitor + executing state function.
 function knoppen()
 	-- A Button
-	button.add("Abutton", "Nerther", "toggle", 2, 2, 11, 4, colors.red, colors.lime, colors.white, 
+	button.add("Abutton", "Nether", "toggle", 2, 2, 11, 4, colors.red, colors.lime, colors.white, 
 	function ()
 		print("Left A touched")
 		redstone()
