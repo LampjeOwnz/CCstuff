@@ -81,7 +81,7 @@ end
 Resetcable()
 
 function Resetmonitor()
-	sleep(5)
+	--sleep(5)
 	button.setState("Abutton", true)
 	button.setState("Bbutton", true)
 	button.setState("Cbutton", true)
@@ -92,7 +92,7 @@ function Resetmonitor()
 end
 
 function take()
-	--sleep(2)
+	sleep(5)
 	rs.setBundledOutput("bottom", colors.black)
 	sleep(1)
 	rs.setBundledOutput("bottom", 0)
