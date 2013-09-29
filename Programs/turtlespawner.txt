@@ -11,13 +11,11 @@ refuel()
 
 function netherbook()
 	turtle.select(1)
-	sleep(0.5)
 	turtle.drop()
 end
 
 function theendbook()
 	turtle.select(2)
-	sleep(0.5)
 	turtle.drop()
 end
 
@@ -28,7 +26,6 @@ end
 
 function oilfieldbook()
 	turtle.select(4)
-	sleep(0.5)
 	turtle.drop()
 end
 
