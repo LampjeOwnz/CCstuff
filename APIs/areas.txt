@@ -1,0 +1,359 @@
+
+-- Version Information
+-- Turtle Area API
+apiVersion = "0.005"
+
+local tArgs = {...}
+local turth = 1
+
+os.loadAPI("turt")
+
+turtle.select(1)
+
+function version()
+  return apiVersion
+end
+
+function checknext()
+	varsa = turtle.getItemCount(1) varsb = turtle.getItemCount(2) varsc = turtle.getItemCount(3) varsd = turtle.getItemCount(4) varse = turtle.getItemCount(5) varsf = turtle.getItemCount(6)
+	varsg = turtle.getItemCount(7) varsh = turtle.getItemCount(8) varsi = turtle.getItemCount(9) varsj = turtle.getItemCount(10) varsk = turtle.getItemCount(11) varsl = turtle.getItemCount(12)
+	varsm = turtle.getItemCount(13) varsn = turtle.getItemCount(14) varso = turtle.getItemCount(15) varsp = turtle.getItemCount(16)
+	
+	if varsa == 0 then 
+	turtle.select(2) 
+	end
+	if varsa == 0 and varsb == 0 then
+	turtle.select(3)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 then
+	turtle.select(4)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 then
+	turtle.select(5)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 then
+	turtle.select(6)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 then
+	turtle.select(7)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 then
+	turtle.select(8)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 then
+	turtle.select(9)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 then
+	turtle.select(10)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 then
+	turtle.select(11)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 then
+	turtle.select(12)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 then
+	turtle.select(13)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 and varsm == 0 then
+	turtle.select(14)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 and varsm == 0 and varsn == 0 then
+	turtle.select(15)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 and varsm == 0 and varsn == 0 and varso == 0 then
+	turtle.select(16)
+	end
+	
+	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 and varsm == 0 and varsn == 0 and varso == 0 and varsp == 0 then
+	turtle.select(1)
+	print("Turtle totaly empty no blocks at all")
+	end
+	
+	turtle.placeDown()
+end
+
+
+function areaclr(length, width, hight)
+	if length < 31 and width < 31 and hight < 31 then
+		start = true
+	else
+		start = false
+	end
+	if start == true then
+		print("Clearing area Length: "..length.." \nWidth: "..width.." Higth: "..hight..".")
+		while turth <= hight do
+			bump = false
+			for w=1, width do
+				for l=1, length do
+					if l~=length then
+						turt.move("forward")
+					end
+				end
+				if w~=width then
+					if not bump then
+						turt.move("left")
+						turt.move("forward")
+					else
+						turt.move("right")
+						turt.move("forward")
+					end
+					if bump then
+						turt.move("right")
+					else
+						turt.move("left")
+					end
+					bump = not bump
+				end
+			end
+			-- return
+			if width == 2 or width == 4 or width == 6 or width == 8 or width == 10 or width == 12 or width == 14 or width == 16 or width == 18 or width == 20 or width == 22 or width == 24
+				or width == 26 or width == 28 or width == 30 then
+				if not bump then
+					move("left")
+					move("forward")
+					move("left")
+					for i=1, length do
+						if i~=length then
+							turt.move("forward")
+						end
+					end
+				end
+				turt.move("left")
+				if width == 1 then
+					turt.move("forward")
+				else
+					for i=1, width - 1 do
+						turt.move("forward")
+					end
+					if not bump then
+						turt.move("forward")
+					end
+				end
+				turt.move("left")
+				if turth < hight then
+					turt.move("up")
+				end
+				turth = turth +1
+			elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25
+				or width == 27 or width == 29 then
+				width = width -2
+				if not bump then
+					turt.move("right")
+					turt.move("forward")
+					turt.move("right")
+					for i=1, length do
+						if i~=length then
+							turt.move("forward")
+						end
+					end
+				end
+				turt.move("left")
+				if width == 1 then
+					turt.move("forward")
+				else
+					for i=1, width - 1 do
+						turt.move("forward")
+					end
+					if not bump then
+						turt.move("forward")
+					end
+				end
+				turt.move("left")
+				if turth < hight then
+					turt.move("up")
+				end
+				turth = turth +1
+				width = width +2
+			end	
+		end
+		if turth > hight then	
+			while turth > 2 do
+				turt.move("down")
+				turth = turth -1
+			end
+			turth = 1
+		end
+		print("Area cleared.")
+	else
+		print("Current Length: "..length.." Width: "..width.." \nHigth: "..hight..".")
+		if length >30 then
+			print("Length is to high max is 30")
+		end
+		if width >30 then
+			print("Width is to high max is 30")
+		end
+		if hight >30 then
+			print("Higth is to high max is 30")
+		end
+		print("Max area is Length:30 X Width:30 \nX Hight:30")
+	end
+end
+
+function areaplc(length, width, hight)
+	if length < 31 and width < 31 and hight < 31 then
+		start = true
+	else
+		start = false
+	end
+	if start == true then
+		print("Placing blocks in area Length: "..length.." \nWidth: "..width.." Higth: "..hight..".")
+		while turth <= hight do
+			bump = false
+			for w=1, width do
+				for l=1, length do
+					if l~=length then
+						turt.move("forward")
+						checknext()
+					end
+				end
+				if w~=width then
+					if not bump then
+						turt.move("left")
+						turt.move("forward")
+						checknext()
+					else
+						turt.move("right")
+						turt.move("forward")
+						checknext()
+					end
+					if bump then
+						turt.move("right")
+					else
+						turt.move("left")
+					end
+					bump = not bump
+				end
+			end
+			-- return
+			if width == 2 or width == 4 or width == 6 or width == 8 or width == 10 or width == 12 or width == 14 or width == 16 or width == 18 or width == 20 or width == 22 or width == 24
+				or width == 26 or width == 28 or width == 30 then
+				if not bump then
+					move("left")
+					move("forward")
+					checknext()
+					move("left")
+					for i=1, length do
+						if i~=length then
+							turt.move("forward")
+							checknext()
+						end
+					end
+				end
+				turt.move("left")
+				if width == 1 then
+					turt.move("forward")
+					checknext()
+				else
+					for i=1, width - 1 do
+						turt.move("forward")
+						checknext()
+					end
+					if not bump then
+						turt.move("forward")
+						checknext()
+					end
+				end
+				turt.move("left")
+				if turth < hight then
+					turt.move("up")
+				end
+				turth = turth +1
+			elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25
+				or width == 27 or width == 29 then
+				width = width -2
+				if not bump then
+					turt.move("right")
+					turt.move("forward")
+					turt.move("right")
+					for i=1, length do
+						if i~=length then
+							turt.move("forward")
+						end
+					end
+				end
+				turt.move("left")
+				if width == 1 then
+					turt.move("forward")
+				else
+					for i=1, width - 1 do
+						turt.move("forward")
+					end
+					if not bump then
+						turt.move("forward")
+					end
+				end
+				turt.move("left")
+				if turth < hight then
+					turt.move("up")
+				end
+				turth = turth +1
+				width = width +2
+			end	
+		end
+		if turth > hight then	
+			while turth > 2 do
+				turt.move("down")
+				turth = turth -1
+			end
+			turth = 1
+		end
+		print("Area placed.")
+	else
+		print("Current Length: "..length.." Width: "..width.." \nHigth: "..hight..".")
+		if length >30 then
+			print("Length is to high max is 30")
+		end
+		if width >30 then
+			print("Width is to high max is 30")
+		end
+		if hight >30 then
+			print("Higth is to high max is 30")
+		end
+		print("Max area is Length:30 X Width:30 \nX Hight:30")
+	end
+end
+
+if tArgs[1] == nil then 
+	print("Wrong length.")
+end
+
+if tArgs[2] == nil then 
+	print("Wrong width.")
+end
+
+
+if tArgs[3] == nil then 
+	tArgs[3] = 1
+end
+
+if tArgs[4] == nil then 
+	print("No mode defined.")
+end
+
+
+length = tonumber(tArgs[1])
+width = tonumber(tArgs[2])
+hight = tonumber(tArgs[3])
+
+if tArgs[4] == "clear" then 
+	areaclr(length, width, hight)
+end
+
+if tArgs[4] == "place" then 
+	areaplc(length, width, hight)
+end
+
