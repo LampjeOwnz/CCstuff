@@ -85,10 +85,17 @@ function Resetmonitor()
 	button.setState("Abutton", true)
 	button.setState("Bbutton", true)
 	button.setState("Cbutton", true)
-	button.setState("Dbutton", true)
-	button.setState("Ebutton", true)
+	--button.setState("Dbutton", true)
+	--button.setState("Ebutton", true)
 	rs.setBundledOutput("back", colors.white)
 	button.draw()
+end
+
+function take()
+	`sleep(1)
+	rs.setBundledOutput("back", colors.black)
+	sleep(1)
+	rs.setBundledOutput("back", 0)
 end
 
 -- Redstone functions
@@ -96,30 +103,33 @@ function redstone()
 	astate = button.getState("Abutton")
 	bstate = button.getState("Bbutton")
 	cstate = button.getState("Cbutton")
-	dstate = button.getState("Dbutton")
-	estate = button.getState("Ebutton")
+	--dstate = button.getState("Dbutton")
+	--estate = button.getState("Ebutton")
 	if astate == false then
-		rs.setBundledOutput("back", colors.white + colors.orange)
+		rs.setBundledOutput("back", colors.orange)
+		take()
 	end
 	if bstate == false then
-		rs.setBundledOutput("back", colors.white + colors.magenta)
+		rs.setBundledOutput("back", colors.magenta)
+		take()
 	end
 	if cstate == false then
-		rs.setBundledOutput("back", colors.white + colors.lightBlue)
+		rs.setBundledOutput("back", colors.lightBlue)
+		take()
 	end
-	if dstate == false then
-		rs.setBundledOutput("back", colors.white + colors.yellow)
-	end
-	if estate == false then
-		rs.setBundledOutput("back", colors.white + colors.lime)
-	end
+	--if dstate == false then
+	--	rs.setBundledOutput("back", colors.white + colors.yellow)
+	--end
+	--if estate == false then
+	--	rs.setBundledOutput("back", colors.white + colors.lime)
+	--end
 	Resetmonitor()
 end	
 
 -- Making the button for the monitor + executing state function.
 function knoppen()
 	-- A Button
-	button.add("Abutton", "Left A", "toggle", 2, 2, 9, 4, colors.red, colors.lime, colors.white, 
+	button.add("Abutton", "Nerther", "toggle", 2, 2, 11, 4, colors.red, colors.lime, colors.white, 
 	function ()
 		print("Left A touched")
 		redstone()
@@ -128,7 +138,7 @@ function knoppen()
 	button.setState("Abutton", true)
 	
 	-- B button
-	button.add("Bbutton", "Left B", "toggle", 2, 6, 9, 8, colors.red, colors.lime, colors.white, 
+	button.add("Bbutton", "The End", "toggle", 2, 6, 10, 8, colors.lightGray, colors.lime, colors.white, 
 	function ()
 		print("Left B touched")
 		redstone()
@@ -137,7 +147,7 @@ function knoppen()
 	button.setState("Bbutton", true)
 	
 	-- C button
-	button.add("Cbutton", "Right A", "toggle", 2, 10, 10, 12, colors.red, colors.lime, colors.white, 
+	button.add("Cbutton", "Mining Age", "toggle", 2, 10, 14, 12, colors.green, colors.lime, colors.white, 
 	function ()
 		print("Right A touched")
 		redstone()
@@ -146,22 +156,22 @@ function knoppen()
 	button.setState("Cbutton", true)
 	
 	-- D button
-	button.add("Dbutton", "Right B", "toggle", 2, 14, 10, 16, colors.red, colors.lime, colors.white, 
-	function ()
-		print("Right B touched")
-		redstone()
-		button.draw()
-	end)
-	button.setState("Dbutton", true)
+	--button.add("Dbutton", "Right B", "toggle", 2, 14, 10, 16, colors.red, colors.lime, colors.white, 
+	--function ()
+	--	print("Right B touched")
+	--	redstone()
+	--	button.draw()
+	--end)
+	--button.setState("Dbutton", true)
 	
 	-- AE button
-	button.add("Ebutton", "AE Portal", "toggle", 13, 2, 23, 4, colors.red, colors.lime, colors.white, 
-	function ()
-		print("AE portal touched")
-		redstone()
-		button.draw()
-	end)
-	button.setState("Ebutton", true)
+	--button.add("Ebutton", "AE Portal", "toggle", 13, 2, 23, 4, colors.red, colors.lime, colors.white, 
+	--function ()
+	--	print("AE portal touched")
+	--	redstone()
+	--	button.draw()
+	--end)
+	--button.setState("Ebutton", true)
 
 	button.draw()
 end
