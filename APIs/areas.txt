@@ -181,7 +181,7 @@ function areaclr(length, width, hight)
 				end
 				turth = turth +1
 			elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25
-				or width == 27 or width == 29 or width == 31 or width == 33 or width == 35 or width == 37 or width == 39 or width == 41 or width == 43 or width == 45 or width == 47or width == 49 or width == 51 or width == 53 or width == 55 then
+				or width == 27 or width == 29 or width == 31 or width == 33 or width == 35 or width == 37 or width == 39 or width == 41 or width == 43 or width == 45 or width == 47 or width == 49 or width == 51 or width == 53 or width == 55 then
 				width = width -2
 				if not bump then
 					turt.move("right")
@@ -305,7 +305,7 @@ function areaplc(length, width, hight)
 				end
 				turth = turth +1
 			elseif width == 1 or width == 3 or width == 5 or width == 7 or width == 9 or width == 11 or width == 13 or width == 15 or width == 17 or width == 19 or width == 21 or width == 23 or width == 25
-				or width == 27 or width == 29 or width == 31 or width == 33 or width == 35 or width == 37 or width == 39 or width == 41 or width == 43 or width == 45 or width == 47or width == 49 or width == 51 or width == 53 or width == 55  then
+				or width == 27 or width == 29 or width == 31 or width == 33 or width == 35 or width == 37 or width == 39 or width == 41 or width == 43 or width == 45 or width == 47 or width == 49 or width == 51 or width == 53 or width == 55  then
 				width = width -2
 				if not bump then
 					turt.move("right")
