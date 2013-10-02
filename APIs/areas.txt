@@ -285,18 +285,18 @@ function areaplc(length, width, hight)
 				for l=1, length do
 					if l~=length then
 						turt.move("forward")
-						placer()
+						checknext()
 					end
 				end
 				if w~=width then
 					if not bump then
 						turt.move("left")
 						turt.move("forward")
-						placer()
+						checknext()
 					else
 						turt.move("right")
 						turt.move("forward")
-						placer()
+						checknext()
 					end
 					if bump then
 						turt.move("right")
@@ -312,27 +312,27 @@ function areaplc(length, width, hight)
 				if not bump then
 					move("left")
 					move("forward")
-					placer()
+					checknext()
 					move("left")
 					for i=1, length do
 						if i~=length then
 							turt.move("forward")
-							placer()
+							checknext()
 						end
 					end
 				end
 				turt.move("left")
 				if width == 1 then
 					turt.move("forward")
-					placer()
+					checknext()
 				else
 					for i=1, width - 1 do
 						turt.move("forward")
-						placer()
+						checknext()
 					end
 					if not bump then
 						turt.move("forward")
-						placer()
+						checknext()
 					end
 				end
 				turt.move("left")
