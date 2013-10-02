@@ -122,35 +122,35 @@ function placer()
 	varsa = turtle.getItemCount(1) varsb = turtle.getItemCount(2) varsc = turtle.getItemCount(3) varsd = turtle.getItemCount(4) varse = turtle.getItemCount(5) varsf = turtle.getItemCount(6)
 	varsg = turtle.getItemCount(7) varsh = turtle.getItemCount(8) varsi = turtle.getItemCount(9) varsj = turtle.getItemCount(10) varsk = turtle.getItemCount(11) varsl = turtle.getItemCount(12)
 	varsm = turtle.getItemCount(13) varsn = turtle.getItemCount(14) varso = turtle.getItemCount(15)
-	if varsa > 0 then turtle.place() end
+	if varsa > 0 then turtle.placeDown() end
 	if varsa == 0 then turtle.select(2) end
-	if varsb > 0 then turtle.place() end
+	if varsb > 0 then turtle.placeDown() end
 	if varsb == 0 then turtle.select(3) end
-	if varsc > 0 then turtle.place() end
+	if varsc > 0 then turtle.placeDown() end
 	if varsc == 0 then turtle.select(4) end
-	if varsd > 0 then turtle.place() end
+	if varsd > 0 then turtle.placeDown() end
 	if varsd == 0 then turtle.select(5) end
-	if varse > 0 then turtle.place() end
+	if varse > 0 then turtle.placeDown() end
 	if varse == 0 then turtle.select(6) end
-	if varsf > 0 then turtle.place() end
+	if varsf > 0 then turtle.placeDown() end
 	if varsf == 0 then turtle.select(7) end
-	if varsg > 0 then turtle.place() end
+	if varsg > 0 then turtle.placeDown() end
 	if varsg == 0 then turtle.select(8) end
-	if varsh > 0 then turtle.place() end
+	if varsh > 0 then turtle.placeDown() end
 	if varsh == 0 then turtle.select(9) end
-	if varsi > 0 then turtle.place() end
+	if varsi > 0 then turtle.placeDown() end
 	if varsi == 0 then turtle.select(10) end
-	if varsj > 0 then turtle.place() end
+	if varsj > 0 then turtle.placeDown() end
 	if varsj == 0 then turtle.select(11) end
-	if varsk > 0 then turtle.place() end
+	if varsk > 0 then turtle.placeDown() end
 	if varsk == 0 then turtle.select(12) end
-	if varsl > 0 then turtle.place() end
+	if varsl > 0 then turtle.placeDown() end
 	if varsl == 0 then turtle.select(13) end
-	if varsm > 0 then turtle.place() end
+	if varsm > 0 then turtle.placeDown() end
 	if varsm == 0 then turtle.select(14) end
-	if varsn > 0 then turtle.place() end
+	if varsn > 0 then turtle.placeDown() end
 	if varsn == 0 then turtle.select(15) end
-	if varso > 0 then turtle.place() end
+	if varso > 0 then turtle.placeDown() end
 	if varso == 0 then replaceBlocks() end
 end
 
