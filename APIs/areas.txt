@@ -118,6 +118,42 @@ function checknext()
 	turtle.placeDown()
 end
 
+function placer()
+	varsa = turtle.getItemCount(1) varsb = turtle.getItemCount(2) varsc = turtle.getItemCount(3) varsd = turtle.getItemCount(4) varse = turtle.getItemCount(5) varsf = turtle.getItemCount(6)
+	varsg = turtle.getItemCount(7) varsh = turtle.getItemCount(8) varsi = turtle.getItemCount(9) varsj = turtle.getItemCount(10) varsk = turtle.getItemCount(11) varsl = turtle.getItemCount(12)
+	varsm = turtle.getItemCount(13) varsn = turtle.getItemCount(14) varso = turtle.getItemCount(15)
+	if varsa > 0 then turtle.place() end
+	if varsa == 0 then turtle.select(2) end
+	if varsb > 0 then turtle.place() end
+	if varsb == 0 then turtle.select(3) end
+	if varsc > 0 then turtle.place() end
+	if varsc == 0 then turtle.select(4) end
+	if varsd > 0 then turtle.place() end
+	if varsd == 0 then turtle.select(5) end
+	if varse > 0 then turtle.place() end
+	if varse == 0 then turtle.select(6) end
+	if varsf > 0 then turtle.place() end
+	if varsf == 0 then turtle.select(7) end
+	if varsg > 0 then turtle.place() end
+	if varsg == 0 then turtle.select(8) end
+	if varsh > 0 then turtle.place() end
+	if varsh == 0 then turtle.select(9) end
+	if varsi > 0 then turtle.place() end
+	if varsi == 0 then turtle.select(10) end
+	if varsj > 0 then turtle.place() end
+	if varsj == 0 then turtle.select(11) end
+	if varsk > 0 then turtle.place() end
+	if varsk == 0 then turtle.select(12) end
+	if varsl > 0 then turtle.place() end
+	if varsl == 0 then turtle.select(13) end
+	if varsm > 0 then turtle.place() end
+	if varsm == 0 then turtle.select(14) end
+	if varsn > 0 then turtle.place() end
+	if varsn == 0 then turtle.select(15) end
+	if varso > 0 then turtle.place() end
+	if varso == 0 then replaceBlocks() end
+end
+
 
 function areaclr(length, width, hight)
 	if length < 56 and width < 56 and hight < 56 then
@@ -249,18 +285,18 @@ function areaplc(length, width, hight)
 				for l=1, length do
 					if l~=length then
 						turt.move("forward")
-						checknext()
+						placer()
 					end
 				end
 				if w~=width then
 					if not bump then
 						turt.move("left")
 						turt.move("forward")
-						checknext()
+						placer()
 					else
 						turt.move("right")
 						turt.move("forward")
-						checknext()
+						placer()
 					end
 					if bump then
 						turt.move("right")
@@ -276,27 +312,27 @@ function areaplc(length, width, hight)
 				if not bump then
 					move("left")
 					move("forward")
-					checknext()
+					placer()
 					move("left")
 					for i=1, length do
 						if i~=length then
 							turt.move("forward")
-							checknext()
+							placer()
 						end
 					end
 				end
 				turt.move("left")
 				if width == 1 then
 					turt.move("forward")
-					checknext()
+					placer()
 				else
 					for i=1, width - 1 do
 						turt.move("forward")
-						checknext()
+						placer()
 					end
 					if not bump then
 						turt.move("forward")
-						checknext()
+						placer()
 					end
 				end
 				turt.move("left")
