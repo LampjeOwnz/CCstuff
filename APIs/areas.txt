@@ -14,10 +14,47 @@ function version()
   return apiVersion
 end
 
+function replaceBlocks()
+	varso = turtle.getItemCount(15)
+	turtle.select(16)
+	turtle.place()
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(1)
+	turtle.suck(64)
+	turtle.select(16)
+	turtle.dig()
+	turtle.select(1)
+end
+
 function checknext()
 	varsa = turtle.getItemCount(1) varsb = turtle.getItemCount(2) varsc = turtle.getItemCount(3) varsd = turtle.getItemCount(4) varse = turtle.getItemCount(5) varsf = turtle.getItemCount(6)
 	varsg = turtle.getItemCount(7) varsh = turtle.getItemCount(8) varsi = turtle.getItemCount(9) varsj = turtle.getItemCount(10) varsk = turtle.getItemCount(11) varsl = turtle.getItemCount(12)
-	varsm = turtle.getItemCount(13) varsn = turtle.getItemCount(14) varso = turtle.getItemCount(15) varsp = turtle.getItemCount(16)
+	varsm = turtle.getItemCount(13) varsn = turtle.getItemCount(14) varso = turtle.getItemCount(15)
 	
 	if varsa == 0 then 
 	turtle.select(2) 
@@ -75,12 +112,7 @@ function checknext()
 	end
 	
 	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 and varsm == 0 and varsn == 0 and varso == 0 then
-	turtle.select(16)
-	end
-	
-	if varsa == 0 and varsb == 0 and varsc == 0 and varsd == 0 and varse == 0 and varsf == 0 and varsg == 0 and varsh == 0 and varsi == 0 and varsj == 0 and varsk == 0 and varsl == 0 and varsm == 0 and varsn == 0 and varso == 0 and varsp == 0 then
-	turtle.select(1)
-	print("Turtle totaly empty no blocks at all")
+	replaceBlocks()
 	end
 	
 	turtle.placeDown()
