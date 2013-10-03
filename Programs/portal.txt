@@ -195,6 +195,7 @@ function knoppen()
 		redstone()
 		button.draw()
 	end)
+	button.setState("Ebutton", true)
 	
 	-- F button
 	button.add("Fbutton", "Spawn", "toggle", 15, 6, 21, 8, colors.lightGray, colors.lime, colors.white, 
