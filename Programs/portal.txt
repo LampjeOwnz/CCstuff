@@ -189,7 +189,7 @@ function knoppen()
 	button.setState("Dbutton", true)
 	
 	-- E button
-	button.add("Ebutton", "Lava Age", "toggle", 15, 2, 23, 4, colors.red, colors.lime, colors.white, 
+	button.add("Ebutton", "Lava Age", "toggle", 16, 2, 25, 4, colors.red, colors.lime, colors.white, 
 	function ()
 		print("Lava Age touched")
 		redstone()
@@ -198,7 +198,7 @@ function knoppen()
 	button.setState("Ebutton", true)
 	
 	-- F button
-	button.add("Fbutton", "Spawn", "toggle", 15, 6, 21, 8, colors.lightGray, colors.lime, colors.white, 
+	button.add("Fbutton", "Spawn", "toggle", 16, 6, 22, 8, colors.lightGray, colors.lime, colors.white, 
 	function ()
 		print("Spawn touched")
 		redstone()
