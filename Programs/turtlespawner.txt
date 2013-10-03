@@ -29,6 +29,16 @@ function oilfieldbook()
 	turtle.drop()
 end
 
+function lavabook()
+	turtle.select(5)
+	turtle.drop()
+end
+
+function spawnbook()
+	turtle.select(6)
+	turtle.drop()
+end
+
 function mback()
 	turtle.back()
 end

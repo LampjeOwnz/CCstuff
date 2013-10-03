@@ -89,7 +89,8 @@ function Resetmonitor()
 	button.setState("Bbutton", true)
 	button.setState("Cbutton", true)
 	button.setState("Dbutton", true)
-	--button.setState("Ebutton", true)
+	button.setState("Ebutton", true)
+	button.setState("Fbutton", true)
 	rs.setBundledOutput("bottom", colors.white)
 	button.draw()
 end
@@ -110,7 +111,8 @@ function redstone()
 	bstate = button.getState("Bbutton")
 	cstate = button.getState("Cbutton")
 	dstate = button.getState("Dbutton")
-	--estate = button.getState("Ebutton")
+	estate = button.getState("Ebutton")
+	fstate = button.getState("Fbutton")
 	if astate == false then
 		rednet.send(turtID, "netherbook")
 		rednet.receive()
@@ -131,6 +133,16 @@ function redstone()
 		rednet.receive()
 		take()
 	end
+	if estate == false then
+		rednet.send(turtID, "lavabook")
+		rednet.receive()
+		take()
+	end
+	if fstate == false then
+		rednet.send(turtID, "spawnbook")
+		rednet.receive()
+		take()
+	end
 	--if estate == false then
 	--	rs.setBundledOutput("bottom", colors.white + colors.lime)
 	--	take()
@@ -143,7 +155,7 @@ function knoppen()
 	-- A Button
 	button.add("Abutton", "Nether", "toggle", 2, 2, 11, 4, colors.red, colors.lime, colors.white, 
 	function ()
-		print("Left A touched")
+		print("Nether touched")
 		redstone()
 		button.draw()
 	end)
@@ -152,7 +164,7 @@ function knoppen()
 	-- B button
 	button.add("Bbutton", "The End", "toggle", 2, 6, 10, 8, colors.lightGray, colors.lime, colors.white, 
 	function ()
-		print("Left B touched")
+		print("The End touched")
 		redstone()
 		button.draw()
 	end)
@@ -161,7 +173,7 @@ function knoppen()
 	-- C button
 	button.add("Cbutton", "Mining Age", "toggle", 2, 10, 14, 12, colors.green, colors.lime, colors.white, 
 	function ()
-		print("Right A touched")
+		print("Mining Age touched")
 		redstone()
 		button.draw()
 	end)
@@ -170,20 +182,28 @@ function knoppen()
 	-- D button
 	button.add("Dbutton", "Oilfield", "toggle", 2, 14, 11, 16, colors.gray, colors.lime, colors.white, 
 	function ()
-		print("Right B touched")
+		print("Oilfield touched")
 		redstone()
 		button.draw()
 	end)
 	button.setState("Dbutton", true)
 	
-	-- AE button
-	--button.add("Ebutton", "AE Portal", "toggle", 13, 2, 23, 4, colors.red, colors.lime, colors.white, 
-	--function ()
-	--	print("AE portal touched")
-	--	redstone()
-	--	button.draw()
-	--end)
-	--button.setState("Ebutton", true)
+	-- E button
+	button.add("Ebutton", "Lava Age", "toggle", 15, 2, 23, 4, colors.red, colors.lime, colors.white, 
+	function ()
+		print("Lava Age touched")
+		redstone()
+		button.draw()
+	end)
+	
+	-- F button
+	button.add("Fbutton", "Spawn", "toggle", 15, 6, 21, 8, colors.lightGray, colors.lime, colors.white, 
+	function ()
+		print("Spawn touched")
+		redstone()
+		button.draw()
+	end)
+	button.setState("Fbutton", true)
 
 	button.draw()
 end
