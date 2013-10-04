@@ -103,6 +103,7 @@ function take()
 	sleep(1)
 	rednet.send(turtID, "mforward")
 	rednet.receive()
+	sleep(5)
 end
 
 -- Redstone functions
