@@ -99,12 +99,13 @@ function take()
 	sleep(5)
 	rednet.send(turtID, "mback")
 	rednet.receive()
-	rs.setBundledOutput("bottom", colors.black + colors.white)
+	rs.setBundledOutput("bottom", colors.black)
 	sleep(1)
 	rs.setBundledOutput("bottom", colors.white)
+	sleep(1)
 	rednet.send(turtID, "mforward")
 	rednet.receive()
-	sleep(5)
+	sleep(4)
 end
 
 -- Redstone functions
