@@ -217,7 +217,7 @@ function knoppen()
 	button.setState("Fbutton", true)
 	
 	-- G button
-	button.add("Gbutton", "Diamond", "toggle", 16, 10, 24, 12, colors.lightGray, colors.lime, colors.white, 
+	button.add("Gbutton", "Diamond", "toggle", 16, 10, 24, 12, colors.green, colors.lime, colors.white, 
 	function ()
 		print("Diamond touched")
 		redstone()
