@@ -1,6 +1,6 @@
 request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/spawner.txt")
 -- request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/portal.txt")
--- request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/turtlespawner.txt")
+-- Lampjrequest = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/turtlespawner.txt")
 -- request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
 data = request.readAll()
 file = fs.open("spawner", "w")

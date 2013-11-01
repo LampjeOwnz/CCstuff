@@ -19,23 +19,28 @@ function theendbook()
 	turtle.drop()
 end
 
-function miningagebook()
+function twilightbook()
 	turtle.select(3)
 	turtle.drop()
 end
 
-function oilfieldbook()
+function densbook()
 	turtle.select(4)
 	turtle.drop()
 end
 
-function lavabook()
+function glowquartsbook()
 	turtle.select(5)
 	turtle.drop()
 end
 
-function spawnbook()
+function villagebook()
 	turtle.select(6)
+	turtle.drop()
+end
+
+function diamondbook()
+	turtle.select(7)
 	turtle.drop()
 end
 
