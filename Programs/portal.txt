@@ -75,7 +75,7 @@ end
 checkAPI()
 
 os.loadAPI("button")
-button.setMon("top")
+button.setMon("back")
 
 function Resetcable()
 	rs.setBundledOutput("bottom", colors.white)
