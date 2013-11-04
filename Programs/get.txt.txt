@@ -1,5 +1,5 @@
 print("Getting Downloader needed")
-request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/APIs/button.txt")
+request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/downloader.txt")
 data = request.readAll()
 file = fs.open("downloader", "w")
 file.write(data)
