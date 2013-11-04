@@ -4,7 +4,7 @@ prgrVersion = "0.7"
 m = peripheral.wrap("back")
 rednet.open("right")
 
-local turtID = 668
+local turtID = 405
 
 function downloadAPI()
 	print("Updating...")
