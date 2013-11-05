@@ -1,13 +1,14 @@
 rednet.open("right")
 local func
 
-function refuel()
+function fueler()
 	turtle.select(16)
-	turtle.refuel()
-	turtle.select(1)
+	if fuellvl < 100 then
+		turtle.refuel()
+	end
 end
 
-refuel()
+fueler()
 
 function netherbook()
 	turtle.select(1)

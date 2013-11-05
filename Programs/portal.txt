@@ -98,6 +98,8 @@ end
 
 function take()
 	sleep(5)
+	rednet.send(turtID, "fueler")
+	rednet.receive()
 	rednet.send(turtID, "mback")
 	rednet.receive()
 	rs.setBundledOutput("bottom", colors.black)
