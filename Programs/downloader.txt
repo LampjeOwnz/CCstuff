@@ -40,3 +40,4 @@ print("")
 sleep(0.5)
 
 --request = http.get("https://raw.github.com/LampjeOwnz/CCstuff/master/Programs/spawner.txt")
+.get("

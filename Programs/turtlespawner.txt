@@ -29,7 +29,7 @@ function densbook()
 	turtle.drop()
 end
 
-function glowquartsbook()
+function quartzbook()
 	turtle.select(5)
 	turtle.drop()
 end
@@ -39,7 +39,7 @@ function villagebook()
 	turtle.drop()
 end
 
-function diamondbook()
+function glowbook()
 	turtle.select(7)
 	turtle.drop()
 end

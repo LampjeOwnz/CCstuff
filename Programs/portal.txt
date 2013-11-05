@@ -139,7 +139,7 @@ function redstone()
 		take()
 	end
 	if estate == false then
-		rednet.send(turtID, "glowquartsbook")
+		rednet.send(turtID, "quartzbook")
 		rednet.receive()
 		take()
 	end
@@ -149,7 +149,7 @@ function redstone()
 		take()
 	end
 	if gstate == false then
-		rednet.send(turtID, "diamondbook")
+		rednet.send(turtID, "glowbook")
 		rednet.receive()
 		take()
 	end
@@ -199,7 +199,7 @@ function knoppen()
 	button.setState("Dbutton", true)
 	
 	-- E button
-	button.add("Ebutton", "Glow Quartz", "toggle", 16, 2, 28, 4, colors.red, colors.lime, colors.white, 
+	button.add("Ebutton", "Crys Quartz", "toggle", 16, 2, 28, 4, colors.red, colors.lime, colors.white, 
 	function ()
 		print("Glow Quartz touched")
 		redstone()
@@ -217,7 +217,7 @@ function knoppen()
 	button.setState("Fbutton", true)
 	
 	-- G button
-	button.add("Gbutton", "Diamond", "toggle", 16, 10, 24, 12, colors.green, colors.lime, colors.white, 
+	button.add("Gbutton", "Crys Glow", "toggle", 16, 10, 26, 12, colors.green, colors.lime, colors.white, 
 	function ()
 		print("Diamond touched")
 		redstone()
