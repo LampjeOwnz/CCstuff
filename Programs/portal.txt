@@ -199,7 +199,7 @@ function knoppen()
 	button.setState("Dbutton", true)
 	
 	-- E button
-	button.add("Ebutton", "Crys Quartz", "toggle", 16, 2, 28, 4, colors.red, colors.lime, colors.white, 
+	button.add("Ebutton", "Wood Quartz", "toggle", 16, 2, 28, 4, colors.red, colors.lime, colors.white, 
 	function ()
 		print("Glow Quartz touched")
 		redstone()
