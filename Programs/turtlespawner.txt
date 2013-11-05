@@ -2,8 +2,8 @@ rednet.open("right")
 local func
 
 function fueler()
-	turtle.select(16)
-	if fuellvl < 100 then
+	if turtle.getFuelLevel() < 400  then
+		turtle.select(16)
 		turtle.refuel()
 	end
 end

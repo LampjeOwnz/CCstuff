@@ -9,8 +9,8 @@ end
 
 function refuel()
 	turtle.select(1)
-	if fuellvl < 100 then
-		refuel()
+	if turtle.getFuelLevel() < 400 < 100 then
+		turtle.refuel()
 	end
 end
 
