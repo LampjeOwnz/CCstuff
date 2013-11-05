@@ -17,36 +17,43 @@ fueler()
 function netherbook()
 	turtle.select(1)
 	turtle.drop()
+	print("Spot 1 used Nether book")
 end
 
 function theendbook()
 	turtle.select(2)
 	turtle.drop()
+	print("Spot 2 used The End book")
 end
 
 function twilightbook()
 	turtle.select(3)
 	turtle.drop()
+	print("Spot 3 used Twilight book")
 end
 
 function densbook()
 	turtle.select(4)
 	turtle.drop()
+	print("Spot 4 used Densex1 book")
 end
 
 function quartzbook()
 	turtle.select(5)
 	turtle.drop()
+	print("Spot 5 used Quartz book")
 end
 
 function villagebook()
 	turtle.select(6)
 	turtle.drop()
+	print("Spot 6 used Village book")
 end
 
 function glowbook()
 	turtle.select(7)
 	turtle.drop()
+	print("Spot 1 used Glow book")
 end
 
 function mback()
