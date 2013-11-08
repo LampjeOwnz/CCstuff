@@ -235,7 +235,7 @@ function knoppen()
 	button.setState("Gbutton", true)
 	
 	-- H button
-	button.add("Hbutton", "Lava Glow", "toggle", 16, 14, 26, 16, colors.gray, colors.lime, colors.white, 
+	button.add("Hbutton", "Lava Age", "toggle", 16, 14, 25, 16, colors.gray, colors.lime, colors.white, 
 	function ()
 		print("Lava touched")
 		redstone()
