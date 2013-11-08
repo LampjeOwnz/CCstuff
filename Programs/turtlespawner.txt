@@ -53,9 +53,14 @@ end
 function glowbook()
 	turtle.select(7)
 	turtle.drop()
-	print("Spot 1 used Glow book")
+	print("Spot 7 used Glow book")
 end
 
+function lavabook()
+	turtle.select(8)
+	turtle.drop()
+	print("Spot 8 used Glow book")
+end
 function mback()
 	turtle.back()
 end
