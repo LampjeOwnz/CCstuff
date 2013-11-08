@@ -241,7 +241,7 @@ function knoppen()
 		redstone()
 		button.draw()
 	end)
-	button.setState("HGbutton", true)
+	button.setState("Hbutton", true)
 
 	button.draw()
 end
