@@ -1,6 +1,7 @@
 rednet.open("right")
 
 local turtID = 417
+local timer = 300
 
 os.loadAPI("turt")
 
@@ -76,5 +77,5 @@ while true do
 	term.clear()
 	term.setCursorPos(1,1)
 	print("Coca farm is done waiting for next cycle.")
-	sleep(120)
+	sleep(timer)
 end
