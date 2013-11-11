@@ -38,9 +38,10 @@ function planter()
 	for i = 1 , lenghtA do
 		if i~=lengthA then
 			turt.move("left")
-		turt.move("back")
-		turt.move("right")
-		turtle.place()			
+			turt.move("back")
+			turt.move("right")
+			turtle.place()
+		end	
 	end
 -- Side 1
 	turt.move("left")
@@ -67,7 +68,8 @@ function planter()
 			turt.move("left")
 			turt.move("back")
 			turt.move("right")
-			turtle.place()			
+			turtle.place()
+		end
 	end
 -- Side 2
 	turt.move("left")
