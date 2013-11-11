@@ -4,9 +4,9 @@ local turtID = 417
 
 os.loadAPI("turt")
 
-local lengthA = 6
-local lengthB = 7
-local width = 3
+local lengthA = 7
+local lengthB = 8
+local width = 4
 
 term.clear()
 term.setCursorPos(1,1)

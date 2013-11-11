@@ -2,9 +2,9 @@ rednet.open("right")
 
 local func
 
-local lengthA = 5
-local lengthB = 6
-local width = 2
+local lengthA = 6
+local lengthB = 7
+local width = 3
 
 os.loadAPI("turt")
 
