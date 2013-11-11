@@ -5,7 +5,7 @@ local func
 local lengthA = 6
 local lengthB = 7
 local width = 3
-local layer = 0
+local layercount = 0
 
 os.loadAPI("turt")
 
@@ -22,7 +22,7 @@ function done()
 end
 
 function goback()
-	layer = 0
+	layercount = 0
 	turt.move("back")
 	turt.move("back")
 	turt.move("back")
@@ -38,8 +38,8 @@ function goback()
 end
 
 function layer()
-	layer = layer + 1
-	if lahyer < 3 then
+	layercount = layercount + 1
+	if layercount < 3 then
 		turt.move("up")
 		turt.move("back")
 		turt.move("left")
@@ -49,7 +49,7 @@ function layer()
 		turtle.place()
 		planter()
 	end
-	if layer == 3 then
+	if layercount == 3 then
 		goback()
 	end
 end
