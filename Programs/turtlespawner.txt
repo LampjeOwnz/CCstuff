@@ -1,6 +1,8 @@
 rednet.open("right")
 local func
 
+os.loadAPI("turt")
+
 term.clear()
 term.setCursorPos(1,1)
 print("TurtleSpawner program started.")
