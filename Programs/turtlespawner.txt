@@ -11,8 +11,6 @@ function fueler()
 	turt.fuellvl()
 end
 
-fueler()
-
 function netherbook()
 	turtle.select(1)
 	turtle.drop()
