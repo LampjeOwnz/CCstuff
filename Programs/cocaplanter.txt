@@ -109,7 +109,7 @@ function planter()
 	turtle.place()
 	turt.move("left")
 	
-	goback()
+	layer()
 end
 
 function follow()
