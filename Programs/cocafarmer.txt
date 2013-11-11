@@ -32,7 +32,6 @@ function layer()
 		turt.move("up")
 		turt.move("left")
 		turt.move("forward")
-		turt.move("forward")
 		turt.move("left")
 		cocafarm()
 	end
