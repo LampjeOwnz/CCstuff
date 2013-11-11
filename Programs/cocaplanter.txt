@@ -35,7 +35,7 @@ end
 
 function planter()
 	turtle.place()
-	for i = 1 , lenghtA do
+	for i = 1 , lengthA do
 		if i~=lengthA then
 			turt.move("left")
 			turt.move("back")
@@ -63,7 +63,7 @@ function planter()
 	turt.move("right")
 	turtle.place()
 -- Lenght 2
-	for i = 1 , lenghtA do
+	for i = 1 , lengthA do
 		if i~=lengthA then
 			turt.move("left")
 			turt.move("back")
