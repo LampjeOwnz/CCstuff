@@ -42,6 +42,7 @@ function layer()
 	if layercount < 3 then
 		turt.move("up")
 		turt.move("back")
+		turt.move("back")
 		turt.move("left")
 		turt.move("back")
 		turt.move("back")
