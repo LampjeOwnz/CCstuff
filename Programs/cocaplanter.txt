@@ -46,7 +46,6 @@ function layer()
 		turt.move("back")
 		turt.move("back")
 		turt.move("right")
-		turtle.place()
 		planter()
 	end
 	if layercount == 3 then

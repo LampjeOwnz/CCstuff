@@ -33,6 +33,7 @@ function layer()
 		turt.move("left")
 		turt.move("forward")
 		turt.move("forward")
+		turt.move("left")
 		cocafarm()
 	end
 	if layercount == 3 then
