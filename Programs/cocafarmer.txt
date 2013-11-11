@@ -8,22 +8,37 @@ os.loadAPI("turt")
 local lengthA = 7
 local lengthB = 8
 local width = 4
+local layer = 0
 
 term.clear()
 term.setCursorPos(1,1)
 print("Coca farmer started")
 
 function goback()
+	layer = 0
 	turt.move("forward")
 	turt.move("forward")
 	turt.move("forward")
 	turt.move("left")
-	turt.move("up")
 	turt.move("forward")
 	turt.move("left")
+	turt.move("down")
 	turt.dropall()
 end
 	
+function layer()
+	layer = layer + 1
+	if lahyer < 3 then
+		turt.move("up")
+		turt.move("left")
+		turt.move("forward")
+		turt.move("forward")
+		cocafarm()
+	end
+	if layer == 3 then
+		goback()
+	end
+end
 
 function cocafarm()
 	turt.move("right")
@@ -57,7 +72,7 @@ function cocafarm()
 			turt.move("forward")
 		end	
 	end
-	goback()
+	layer()
 end
 	
 
