@@ -6,10 +6,7 @@ term.setCursorPos(1,1)
 print("TurtleSpawner program started.")
 
 function fueler()
-	if turtle.getFuelLevel() < 400  then
-		turtle.select(16)
-		turtle.refuel()
-	end
+	turt.fuellvl()
 end
 
 fueler()

@@ -6,48 +6,29 @@ function version()
   return apiVersion
 end
 
--- Turtle item (full) detection, not fuel slot(16).
-function turtfull()
-	print("Checking if turtle is full and drop all items. not fuel slot(16).")
-	a = turtle.getItemcount(1) b = turtle.getItemcount(2) c = turtle.getItemcount(3) d = turtle.getItemcount(4)
-	e = turtle.getItemcount(5) f = turtle.getItemcount(6) g = turtle.getItemcount(7) h = turtle.getItemcount(8)
-	i = turtle.getItemcount(9) j = turtle.getItemcount(10) k = turtle.getItemcount(11) l = turtle.getItemcount(12)
-	m = turtle.getItemcount(13) n = turtle.getItemcount(14) o = turtle.getItemcount(15)
-	if a and b and c and d and e and f and g and h and i and j and k and l and m and n and o and p == 64 then
-		turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
-		turtle.select(5) turtle.drop() turtle.select(6) turtle.drop() turtle.select(7) turtle.drop() turtle.select(8) turtle.drop()
-		turtle.select(9) turtle.drop() turtle.select(10) turtle.drop() turtle.select(11) turtle.drop() turtle.select(12) turtle.drop()
-		turtle.select(13) turtle.drop() turtle.select(14) turtle.drop() turtle.select(15) turtle.drop()
+
+-- Turtle drop all but fuel slot function.
+function dropall()
+	print("Drop all items into a chest below. not fuel slot(16).")
+	for i = 1,15 do
+      turtle.select(i)
+      turtle.dropDown()
 	end
 	turtle.select(1)
 	sleep(1)
 end
 
--- Turtle drop all but fuel slot function.
-function dropall()
-	print("Drop all items. nt fuel slot(16).")
-	turtle.select(1) turtle.drop() turtle.select(2) turtle.drop() turtle.select(3) turtle.drop() turtle.select(4) turtle.drop()
-	turtle.select(5) turtle.drop() turtle.select(6) turtle.drop() turtle.select(7) turtle.drop() turtle.select(8) turtle.drop()
-	turtle.select(9) turtle.drop() turtle.select(10) turtle.drop() turtle.select(11) turtle.drop() turtle.select(12) turtle.drop()
-	turtle.select(13) turtle.drop() turtle.select(14) turtle.drop() turtle.select(15) turtle.drop()
-	turtle.select(1)
-	sleep(1)
-end
-
--- Needs a chest below it.
+-- Refueling with a Ender Chest.
 function refuel()
 	print("refueling.")
 	items = turtle.getItemCount(16)
 	turtle.select(16)
-	if items == 0 then
-		print("Looking for chest below me")
-		turtle.suckDown()
-		turtle.refuel()
-		turtle.select(1)
-	else
-		turtle.refuel()
-		turtle.select(1)
-	end
+	print("Refueling from Ender Chest")
+	turtle.placeUp()
+	turtle.suckUp()
+	turtle.refuel()
+	turtle.digUp()
+	turtle.select(1)
 	print("Refueling done")
 	sleep(1)
 end
@@ -67,7 +48,6 @@ function fuellvl()
 	sleep(1.2)
 end
 		
-
 -- Turtle movements.
 function move(direction)
 	if string.lower(direction) == "down" then
@@ -106,6 +86,10 @@ function move(direction)
 	
 	if string.lower(direction) == "right" then
 		turtle.turnRight()
+	end
+	
+	if string.lower(direction) == "back" then
+		turtle.back()
 	end
 	
 	-- Removing 1 by 1 pilar

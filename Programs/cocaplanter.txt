@@ -1,0 +1,87 @@
+rednet.open("right")
+
+local func
+
+local lengthA = 5
+local lengthB = 6
+local width = 2
+
+os.loadAPI("turt")
+
+term.clear()
+term.setCursorPos(1,1)
+print("Coca planter started")
+print("Waiting for command")
+
+function done()
+	turt.fuellvl()
+	term.clear()
+	term.setCursorPos(1,1)
+	print("Cycle done waiting for next one")
+end
+
+function goback()
+	turt.move("back")
+	turt.move("back")
+	turt.move("left")
+	turt.move("back")
+	turt.move("back")
+	turt.move("right")
+	done()
+end
+
+function planter()
+	turt.move("left")
+	turt.move("back")
+	turtle.place()
+	for i=1, lengthA do
+		if i~=lengthA then
+			turt.move("back")
+			turtle.place()
+		end
+	end
+	turt.move("left")
+	turt.move("back")
+	for i=1, width do
+		if i~=width then
+			turt.move("back")
+			turtle.place()
+		end
+	end
+	turt.move("left")
+	turt.move("back")
+	for i=1, lengthB do
+		if i~=lengthB then
+			turt.move("back")
+			turtle.place()
+		end
+	end
+	turt.move("left")
+	turt.move("back")
+	for i=1, width do
+		if i~=width then
+			turt.move("back")
+			turtle.place()
+		end
+	end
+	goback()
+end
+
+function follow()
+	print("Command to plant initiated")
+	turt.move("forward")
+	turt.move("left")
+	turt.move("forward")
+	turt.move("right")
+	turt.move("forward")
+	turt.move("forward")
+	planter()
+end
+
+while true do
+   local id,msg,dist = rednet.receive()
+   func = loadstring(msg.."(...)")
+   setfenv(func, getfenv())
+   func(id)
+   rednet.send(id,"Done")
+end

@@ -1,0 +1,80 @@
+rednet.open("right")
+
+local turtID = 417
+
+os.loadAPI("turt")
+
+local lengthA = 6
+local lengthB = 7
+local width = 3
+
+term.clear()
+term.setCursorPos(1,1)
+print("Coca farmer started")
+
+function goback()
+	turt.move("forward")
+	turt.move("forward")
+	turt.move("forward")
+	turt.move("left")
+	turt.move("up")
+	turt.move("forward")
+	turt.move("left")
+	turt.dropall()
+end
+	
+
+function cocafarm()
+	turt.move("right")
+	
+	for i=1, lengthA do
+		if i~=lengthA then
+			turt.move("forward")
+		end
+	end
+	
+	turt.move("left")
+	
+	for i=1, width do
+		if i~=width then
+			turt.move("forward")
+		end	
+	end
+	
+	turt.move("left")
+	
+	for i=1, lengthB do
+		if i~=lengthB then
+			turt.move("forward")
+		end
+	end
+	
+	turt.move("left")
+	
+	for i=1, width do
+		if i~=width then
+			turt.move("forward")
+		end	
+	end
+	goback()
+end
+	
+
+function go()
+	print("Starting to farm coca beans")
+	turt.move("forward")
+	turt.move("down")
+	turt.move("forward")
+	turt.move("forward")
+	rednet.send(turtID, "follow")
+	cocafarm()
+end
+
+while true do 
+	go()
+	turt.fuellvl()
+	term.clear()
+	term.setCursorPos(1,1)
+	print("Coca farm is done waiting for next cycle.")
+	sleep(120)
+end
