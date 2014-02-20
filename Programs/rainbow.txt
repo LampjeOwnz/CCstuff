@@ -222,6 +222,7 @@ function back()
 	down() right()
 	go() go() go()
 	right() right()
+	print("Waiting for command.")
 end
  
 function work()
