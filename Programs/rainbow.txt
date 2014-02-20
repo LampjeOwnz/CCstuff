@@ -89,8 +89,8 @@ function build()
 	up()
 	turtle.select(8)
 	placer() placer() placer() placer()
-	uo()
-	right() right()
+	goup()
+	right()
 	go()
 end 
  
