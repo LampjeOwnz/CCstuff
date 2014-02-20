@@ -118,6 +118,10 @@ function takken()
 	go() go() go()
 	left() go() left()
 	go() go() go()
+	right()
+	go() go() go()
+	left() go() left()
+	go() go() go()
 end
  
 function chunkone()
@@ -130,13 +134,42 @@ function chunkone()
 	goup() goup() goup() goup() goup() goup() goup() goup()
 	takken()
 end
+
+function chunktwo()
+	goup() goup() goup() goup() goup()
+	takken()
+end
+ 
+ function chunkthree()
+	goup() goup() goup() goup() goup() goup() goup() goup() goup() goup()
+end
+
+function downer()
+	down() down() down() down() down() down() down() down() down() down() down()
+	down() down() down() down() down() down() down() down() down() down()
+end
+
+function placer()
+	turtle.select(12)
+	placer() placer() placer() placer()
+end
+
+function back()
+	right() go() go() go() go()
+	down() right()
+	go() go() go()
+	right() right()
+end
  
 function work()
   base()
   downandbuild()
   chunkone()
---  chunktwo()
---  chunkthree()
+  chunktwo()
+  chunkthree()
+  downer()
+  placer()
+  back()
 end
  
  
