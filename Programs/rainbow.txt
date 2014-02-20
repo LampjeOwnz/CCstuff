@@ -32,8 +32,10 @@ function checkitems()
 	dirt = turtle.getItemCount(8)
 	saplings = turtle.getItemCount(12)
 	if cobble or dirt or saplings < 8 then
+		print(""..cobble..""..dirt..""..saplings.."")
 		rednet.send(masterID,"noitems")
-		reboot()
+		sleep(10)
+		os.reboot()
 	end	
 end
 
@@ -45,7 +47,7 @@ function refuel()
 	end
 	if fueltank == 0 then
 		rednet.send(masterID,"nofuel")
-		reboot()
+		os.reboot()
 	end
 end
 
