@@ -1,0 +1,117 @@
+rednet.open("right")
+local func
+ 
+os.loadAPI("turt")
+ 
+function go()
+  turt.move("forward")
+end
+ 
+function left()
+  turt.move("left")
+end
+ 
+function right()
+  turt.move("right")
+end
+ 
+function up()
+  turt.move("up")
+end
+ 
+function down()
+  turt.move("down")
+end
+ 
+function base()
+  left()
+  go() go()
+  right()
+  go() go() go() go() go() go()
+  left()
+  go() go() go() go() go()
+  left()
+  go() go() go() go() go()
+  left()
+  go() go() go() go()
+  left()
+  go() go() go() go()
+  left()
+  go() go() go()
+  left()
+  go() go() go()
+  left()
+  go() go() go()
+  left()
+end
+ 
+function godownone()
+  go()
+  left()
+  go()
+  left()
+  go()
+  left()
+  go()
+  left()
+  down()
+end
+ 
+function godowntwo()
+  down()
+  go() go() go()
+  left()
+  go() go() go()
+  left()
+  go() go() go()
+  left()
+  go() go()
+  left()
+  go()
+end
+
+function placer()
+	turtle.pladeDown()
+	go() left()
+end
+
+function build()
+	up()
+	turtle.select(4)
+	placer() placer() placer() placer()
+	up()
+	placer() placer() placer() placer()
+	up()
+	turtle.select(8)
+	placer() placer() placer() placer()
+	up()
+	turtle.select(12)
+	placer() placer() placer() placer()
+end 
+ 
+function downandbuild()
+  godowntwo()
+  godownone()
+  godownone()
+  go() left() go() left() go() left() go() left()
+  build()
+end  
+ 
+ 
+ 
+function work()
+  base()
+  downandbuild()
+--  chunkone()
+--  chunktwo()
+--  chunkthree()
+end
+ 
+ 
+while true do
+  local id,msg,dist = rednet.receive()
+  func = loadstring(msg.."(...)")
+  setfenv(func, getfenv())
+  func(id)
+  rednet.send(id,"Done")
+end

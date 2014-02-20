@@ -3,6 +3,9 @@ shell.run("Miner", "chunkloader")
 shell.run("Miner", "fuelBoss")
 reboot
 os.setComputerLabel("
+os.setCompterLabel("
+
+
 
 pastebin get HpxVKWV1 mainProg
 pastebin get BA013Bhn Miner
