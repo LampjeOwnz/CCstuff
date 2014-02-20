@@ -88,7 +88,6 @@ function build()
 	up()
 	up()
 	turtle.select(8)
-	print("placing")
 	placer() placer() placer() placer()
 	up()
 	go() left() go() 
@@ -150,7 +149,7 @@ function downer()
 	down() down() down() down() down() down() down() down() down() down()
 end
 
-function placer()
+function placerB()
 	turtle.select(12)
 	placer() placer() placer() placer()
 end
@@ -169,7 +168,7 @@ function work()
   chunktwo()
   chunkthree()
   downer()
-  placer()
+  placerB()
   back()
 end
  
