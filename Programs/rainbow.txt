@@ -75,6 +75,14 @@ function placer()
 	go() left()
 end
 
+function goup()
+	up()
+	left() go()
+	left() go()
+	left() go()
+	left() go()
+end
+
 function build()
 	up()
 	turtle.select(4)
@@ -85,8 +93,7 @@ function build()
 	turtle.select(8)
 	placer() placer() placer() placer()
 	up()
-	turtle.select(12)
-	placer() placer() placer() placer()
+	goup()
 	right() right()
 	go()
 end 
@@ -98,14 +105,6 @@ function downandbuild()
   go() left() go() left() go() left() go() left()
   build()
 end  
-
-function goup()
-	up()
-	left() go()
-	left() go()
-	left() go()
-	left() go()
-end
  
 function chunkone()
 	left() go()
