@@ -146,7 +146,8 @@ end
 
 function downer()
 	down() down() down() down() down() down() down() down() down() down() down()
-	down() down() down() down() down() down() down() down() down() down()
+	down() down() down() down() down() down() down() down() down() down() down()
+	down()
 end
 
 function placerB()
