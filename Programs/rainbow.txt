@@ -71,7 +71,7 @@ function godowntwo()
 end
 
 function placer()
-	turtle.pladeDown()
+	turtle.placeDown()
 	go() left()
 end
 
