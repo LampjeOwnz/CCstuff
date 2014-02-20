@@ -24,6 +24,41 @@ end
 function down()
   turt.move("down")
 end
+
+function checkitems()
+	cobble = turtle.getItemCount(4)
+	dirt = turtle.getItemCount(8)
+	saplings = turtle.getItemCount(12)
+	if cobble or dirt or saplings < 8 then
+		rednet.send(id,"noitems")
+		break
+	end	
+end
+
+function refuel()
+	turtle.select(16)
+	fueltank = turtle.getItemCount(16)
+	if fueltank > 0 then
+		turtle.refuel()
+	end
+	if fueltank 0 then
+		print("no more coal refuel me")
+		break
+	end
+end
+
+function lvlfuel()
+	fuellvl = turtle.getFuelLevel()
+	if fuellvl < 100 then
+		refuel()
+	end
+	print("Fuel lvl: "..fuellvl.."")
+	sleep(1.2)
+	term.clear()
+	term.setCursorPos(1, 1)
+	print("Resuming last command")
+	sleep(1.2)
+end
  
 function base()
   left()
@@ -168,6 +203,10 @@ function back()
 end
  
 function work()
+  print("Checking items.")
+  checkitems()
+  print("Checking fuel lvl.")
+  lvlfuel()
   print("Farm started")
   base()
   downandbuild()
