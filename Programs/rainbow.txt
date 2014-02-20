@@ -77,10 +77,10 @@ end
 
 function goup()
 	up()
-	left() go()
-	left() go()
-	left() go()
-	left() go()
+	go() left()
+	go() left()
+	go() left()
+	go() left()
 end
 
 function build()
