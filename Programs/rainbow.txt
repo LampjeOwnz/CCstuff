@@ -41,7 +41,7 @@ function refuel()
 	if fueltank > 0 then
 		turtle.refuel()
 	end
-	if fueltank 0 then
+	if fueltank == 0 then
 		rednet.send(id,"nofuel")
 		reboot()
 	end
