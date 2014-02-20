@@ -125,7 +125,7 @@ function chunkone()
 	left() go()
 	left() go()
 	left() go()
-	left())
+	left()
 	goup() goup() goup() goup() goup() goup() goup()
 end
  
