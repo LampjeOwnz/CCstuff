@@ -240,7 +240,10 @@ function work()
   back()
   print("Farm done")
 end
- 
+
+function checkin()
+	rednet.send(id,"TurtleOn")
+end
  
 while true do
   local id,msg,dist = rednet.receive()
