@@ -2,6 +2,8 @@ rednet.open("right")
 local func
  
 os.loadAPI("turt")
+
+print("Waiting for command.") 
  
 function go()
   turt.move("forward")
@@ -85,7 +87,10 @@ end
 
 function build()
 	up()
+	turtle.select(4)
+	placer() placer() placer() placer()
 	up()
+	placer() placer() placer() placer()
 	up()
 	turtle.select(8)
 	placer() placer() placer() placer()
