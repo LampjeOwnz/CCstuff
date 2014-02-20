@@ -242,7 +242,9 @@ function work()
 end
 
 function checkin()
+	print("Master checkin.")
 	rednet.send(masterID,"TurtleOn")
+	print("Waiting for command.")
 end
  
 while true do
