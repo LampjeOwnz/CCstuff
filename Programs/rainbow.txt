@@ -103,7 +103,22 @@ function downandbuild()
   godownone()
   go() left() go() left() go() left() go() left()
   build()
-end  
+end
+
+function takken()
+	right()
+	go() go() go()
+	left() go() left()
+	go() go() go()
+	right()
+	go() go() go()
+	left() go() left()
+	go() go() go()
+	right()
+	go() go() go()
+	left() go() left()
+	go() go() go()
+end
  
 function chunkone()
 	left() go()
@@ -113,6 +128,7 @@ function chunkone()
 	left() go() go()
 	left() go()
 	goup() goup() goup() goup() goup() goup() goup() goup()
+	takken()
 end
  
 function work()
