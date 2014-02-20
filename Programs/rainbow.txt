@@ -3,6 +3,8 @@ local func
  
 os.loadAPI("turt")
 
+local masterID = 24
+
 print("Waiting for command.") 
  
 function go()
@@ -30,7 +32,7 @@ function checkitems()
 	dirt = turtle.getItemCount(8)
 	saplings = turtle.getItemCount(12)
 	if cobble or dirt or saplings < 8 then
-		rednet.send(id,"noitems")
+		rednet.send(masterID,"noitems")
 		reboot()
 	end	
 end
@@ -42,7 +44,7 @@ function refuel()
 		turtle.refuel()
 	end
 	if fueltank == 0 then
-		rednet.send(id,"nofuel")
+		rednet.send(masterID,"nofuel")
 		reboot()
 	end
 end
