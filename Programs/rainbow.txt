@@ -30,9 +30,8 @@ function checkitems()
 	dirt = turtle.getItemCount(8)
 	saplings = turtle.getItemCount(12)
 	if cobble or dirt or saplings < 8 then
-		print("Need more items.")
 		rednet.send(id,"noitems")
-		break
+		reboot()
 	end	
 end
 
@@ -43,9 +42,8 @@ function refuel()
 		turtle.refuel()
 	end
 	if fueltank 0 then
-		print("no more coal refuel me.")
 		rednet.send(id,"nofuel")
-		break
+		reboot()
 	end
 end
 
