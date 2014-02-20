@@ -31,8 +31,20 @@ function checkitems()
 	cobble = turtle.getItemCount(4)
 	dirt = turtle.getItemCount(8)
 	saplings = turtle.getItemCount(12)
-	if cobble or dirt or saplings < 8 then
-		print(""..cobble..""..dirt..""..saplings.."")
+	if  cobble < 8 then
+		print(""..cobble.."")
+		rednet.send(masterID,"noitems")
+		sleep(10)
+		os.reboot()
+	end	
+	if dirt < 8 then
+		print(""..dirt.."")
+		rednet.send(masterID,"noitems")
+		sleep(10)
+		os.reboot()
+	end	
+	if saplings < 8 then
+		print(""..saplings.."")
 		rednet.send(masterID,"noitems")
 		sleep(10)
 		os.reboot()
