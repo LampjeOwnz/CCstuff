@@ -242,7 +242,7 @@ function work()
 end
 
 function checkin()
-	rednet.send(id,"TurtleOn")
+	rednet.send(masterID,"TurtleOn")
 end
  
 while true do
