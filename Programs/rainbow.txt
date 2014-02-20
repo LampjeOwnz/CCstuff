@@ -106,8 +106,6 @@ function goup()
 	left() go()
 	left() go()
 end
-
-function digup()
  
 function chunkone()
 	left() go()
