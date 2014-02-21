@@ -151,8 +151,8 @@ function areaclr(length, width, hight)
 				turt.move("left")
 				if turth < hight then
 					turt.move("up")
+					cinvclear()
 				end
-				cinvclear()
 				turth = turth +1
 				width = width +2
 			end	
