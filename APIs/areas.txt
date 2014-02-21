@@ -27,6 +27,7 @@ function replaceBlocks()
 end
 
 function invclear()
+	print("Dropping")
 	for i = 1, 16 do
 		turtle.select(i)
 		turtle.drop()
@@ -273,7 +274,9 @@ function areaplc(length, width, hight)
 					end
 				end
 				turt.move("left")
+				print("DroppingB")
 				invclear()
+				print("DroppingA")
 				if turth < hight then
 					turt.move("up")
 				end
