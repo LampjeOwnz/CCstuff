@@ -17,7 +17,7 @@ end
 function replaceBlocks()
 	turtle.select(16)
 	turtle.place()
-	for i 1, 15 do
+	for i = 1, 15 do
 		turtle.select(1)
 		turtle.suck(64)
 	end
