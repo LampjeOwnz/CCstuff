@@ -121,6 +121,7 @@ function areaclr(length, width, hight)
 					end
 				end
 				turt.move("left")
+				invclear()
 				if turth < hight then
 					turt.move("up")
 				end
@@ -150,6 +151,7 @@ function areaclr(length, width, hight)
 					end
 				end
 				turt.move("left")
+				invclear()
 				if turth < hight then
 					turt.move("up")
 				end
@@ -245,7 +247,6 @@ function areaplc(length, width, hight)
 					end
 				end
 				turt.move("left")
-				invclear()
 				if turth < hight then
 					turt.move("up")
 				end
@@ -275,7 +276,6 @@ function areaplc(length, width, hight)
 					end
 				end
 				turt.move("left")
-				invclear()
 				if turth < hight then
 					turt.move("up")
 				end
