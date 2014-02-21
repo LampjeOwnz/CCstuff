@@ -245,6 +245,7 @@ function areaplc(length, width, hight)
 					end
 				end
 				turt.move("left")
+				invclear()
 				if turth < hight then
 					turt.move("up")
 				end
@@ -274,9 +275,7 @@ function areaplc(length, width, hight)
 					end
 				end
 				turt.move("left")
-				print("DroppingB")
 				invclear()
-				print("DroppingA")
 				if turth < hight then
 					turt.move("up")
 				end
