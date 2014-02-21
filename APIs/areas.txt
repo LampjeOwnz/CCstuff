@@ -30,7 +30,7 @@ function checknext()
 	for i = 1,15 do
 		tocount = turtle.getItemCount(i)
 		if tocount == 0 and i < 15 then
-			turtle.select(+1)
+			--turtle.select(+1)
 		end
 		if tocount == 0 and i == 15 then
 			replaceBlocks()
@@ -46,7 +46,7 @@ function placer()
 			turtle.placeDown()
 		end
 		if tocount == 0 and i < 15 then
-			turtle.select(+1)
+			--turtle.select(+1)
 		end
 		if tocount == 0 and i == 15 then
 			replaceBlocks()
