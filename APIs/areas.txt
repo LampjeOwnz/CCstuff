@@ -27,7 +27,7 @@ function replaceBlocks()
 end
 
 function cinvclear()
-	for i - 1, 16 to
+	for i = 1, 16 to
 		turtle.select(i)
 		turtle.drop
 	end
