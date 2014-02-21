@@ -26,41 +26,12 @@ function replaceBlocks()
 	turtle.select(1)
 end
 
-function cinvclear()
+function invclear()
+	for i = 1, 16 do
+		turtle.select(i)
+		turtle.drop()
+	end
 	turtle.select(1)
-	turtle.drop()
-	turtle.select(2)
-	turtle.drop()
-	turtle.select(3)
-	turtle.drop()
-	turtle.select(4)
-	turtle.drop()
-	turtle.select(5)
-	turtle.drop()
-	turtle.select(6)
-	turtle.drop()
-	turtle.select(7)
-	turtle.drop()
-	turtle.select(8)
-	turtle.drop()
-	turtle.select(9)
-	turtle.drop()
-	turtle.select(10)
-	turtle.drop()
-	turtle.select(11)
-	turtle.drop()
-	turtle.select(12)
-	turtle.drop()
-	turtle.select(13)
-	turtle.drop()
-	turtle.select(14)
-	turtle.drop()
-	turtle.select(15)
-	turtle.drop()
-	turtle.select(16)
-	turtle.drop()
-	turtle.select(1)
-	sleep(0.2)
 end
 
 function checknext()	
@@ -180,7 +151,6 @@ function areaclr(length, width, hight)
 				turt.move("left")
 				if turth < hight then
 					turt.move("up")
-					cinvclear()
 				end
 				turth = turth +1
 				width = width +2
@@ -303,6 +273,7 @@ function areaplc(length, width, hight)
 					end
 				end
 				turt.move("left")
+				invclear()
 				if turth < hight then
 					turt.move("up")
 				end
