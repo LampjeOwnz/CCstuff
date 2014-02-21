@@ -26,6 +26,14 @@ function replaceBlocks()
 	turtle.select(1)
 end
 
+function cinvclear()
+	for i - 1, 16 to
+		turtle.select(i)
+		turtle.drop
+	end
+	turtle.select(1)
+end
+
 function checknext()	
 	for i = 1,15 do
 		tocount = turtle.getItemCount(i)
@@ -144,6 +152,7 @@ function areaclr(length, width, hight)
 				if turth < hight then
 					turt.move("up")
 				end
+				cinvclear()
 				turth = turth +1
 				width = width +2
 			end	
