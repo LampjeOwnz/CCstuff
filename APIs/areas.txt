@@ -40,7 +40,7 @@ function checknext()
 end
 
 function placer()
-	for i 1,15 do
+	for i = 1,15 do
 		tocount = turtle.getItemCount(i)
 		if tocount > 0 then
 			turtle.placeDown()
