@@ -12,6 +12,7 @@ function checkmove()
 end
 
 function go()
+	print("Mining Started")
 	rs.setBundledOutput("bottom", colors.lightBlue)
 	sleep(2)
 	rs.setBundledOutput("bottom", colors.white)
