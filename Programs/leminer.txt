@@ -1,15 +1,21 @@
+local timer = 11
+local mover = 15
+
+print("Looking for a block above me.")
+
 function checkmove()
 	print("It din't move")
 	rs.setBundledOutput("bottom", colors.magenta)
-	sleep(10)
-	rs.setBundledOutput("bottom", 0)
+	sleep(mover)
+	rs.setBundledOutput("bottom", colors.orange)
+	sleep(2)
 end
 
 function go()
 	rs.setBundledOutput("bottom", colors.lightBlue)
 	sleep(2)
 	rs.setBundledOutput("bottom", colors.white)
-	sleep(7)
+	sleep(timer)
 	rs.setBundledOutput("bottom", colors.orange)
 	sleep(2)
 	checkmove()
