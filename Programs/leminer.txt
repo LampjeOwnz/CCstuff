@@ -1,21 +1,17 @@
 function checkmove()
-	detect = turtle.detect()
-	if detect == true then
-		print("fail")
-	else
-		rs.setBundledOutput("bottom", colors.magenta)
-		sleep(10)
-		rs.setBundledOutput("bottom", 0)
-	end
+	print("It din't move")
+	rs.setBundledOutput("bottom", colors.magenta)
+	sleep(10)
+	rs.setBundledOutput("bottom", 0)
 end
 
 function go()
 	rs.setBundledOutput("bottom", colors.lightBlue)
-	sleep(1)
+	sleep(2)
 	rs.setBundledOutput("bottom", colors.white)
-	sleep(6)
+	sleep(7)
 	rs.setBundledOutput("bottom", colors.orange)
-	sleep(1)
+	sleep(2)
 	checkmove()
 end
 
