@@ -6,7 +6,7 @@ local rounds = 1
 
 function checkmove()
 	detect = turtle.detect()
-	if detect = true then
+	if detect == true then
 		turtle.back()
 	else
 		rs.setBundledOutput("bottom", colors.magenta)
