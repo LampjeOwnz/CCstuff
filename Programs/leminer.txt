@@ -1,7 +1,7 @@
 function checkmove()
 	detect = turtle.detect()
 	if detect == true then
-		nil
+		print("fail")
 	else
 		rs.setBundledOutput("bottom", colors.magenta)
 		sleep(10)
