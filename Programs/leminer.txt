@@ -1,42 +1,27 @@
-local tArgs = {...}
-
-if tArgs[1] == nil then tArgs[1] = 1 end
-local maxrounds = tonumber(tArgs[1])
-local rounds = 1
-
 function checkmove()
 	detect = turtle.detect()
 	if detect == true then
-		turtle.back()
+		nil
 	else
 		rs.setBundledOutput("bottom", colors.magenta)
 		sleep(10)
 		rs.setBundledOutput("bottom", 0)
-		turtle.back()
 	end
 end
 
 function go()
+	rs.setBundledOutput("bottom", colors.lightBlue)
+	sleep(1)
 	rs.setBundledOutput("bottom", colors.white)
 	sleep(6)
 	rs.setBundledOutput("bottom", colors.orange)
 	sleep(1)
-	rs.setBundledOutput("bottom", colors.lightBlue)
-	sleep(1)
-	rs.setBundledOutput("bottom", 0)
-	sleep(1)
 	checkmove()
 end
-	
 
-
-while rounds <= maxrounds do
+while true do
+	detectup = turtle.detectUp()
+	if detectup == true then
 		go()
-		if rounds <= maxrounds then
-			print("Curently round: "..rounds..".")
-			rounds = rounds +1
-		end
-		if rounds > maxrounds then
-			print("Stopping program after this round.")
-		end		
+	end
 end
